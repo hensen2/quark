@@ -12,9 +12,35 @@ export default defineConfig({
     },
   },
   test: {
-    environment: 'happy-dom',
     coverage: {
-      reporter: ['default', 'json', 'html'],
+      enabled: true,
+      reporter: ['text', 'json', 'html'],
     },
+    workspace: [
+      {
+        test: {
+          include: ['tests/unit/**/*.{test,spec}.ts'],
+          exclude: ['tests/browser/**/*.{test,spec}.ts(x)?'],
+          name: 'unit',
+          environment: 'node',
+        },
+      },
+      {
+        test: {
+          include: ['tests/browser/**/*.{test,spec}.ts(x)?'],
+          name: 'browser',
+          browser: {
+            enabled: true,
+            provider: 'playwright',
+            instances: [
+              {
+                browser: 'chromium',
+                setupFiles: ['tests/browser/setup.ts'],
+              },
+            ],
+          },
+        },
+      },
+    ],
   },
 });
