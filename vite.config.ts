@@ -19,23 +19,22 @@ export default defineConfig({
     workspace: [
       {
         test: {
-          include: ['tests/unit/**/*.{test,spec}.ts'],
-          exclude: ['tests/browser/**/*.{test,spec}.ts(x)?'],
           name: 'unit',
+          include: ['src/**/*.unit.{test,spec}.ts'],
           environment: 'node',
         },
       },
       {
         test: {
-          include: ['tests/browser/**/*.{test,spec}.ts(x)?'],
           name: 'browser',
+          include: ['**/*.browser.{test,spec}.ts(x)?'],
           browser: {
             enabled: true,
             provider: 'playwright',
             instances: [
               {
                 browser: 'chromium',
-                setupFiles: ['tests/browser/setup.ts'],
+                setupFiles: ['./vitest.browser.setup.ts'],
               },
             ],
           },
