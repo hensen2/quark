@@ -1,5 +1,4 @@
 {
-  "include": ["**/*.test.ts*", "vitest.browser.setup.ts"],
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo",
     "target": "ESNext",
@@ -23,7 +22,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    /* Paths */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Types */
     "types": ["node", "vitest/globals"]
-  }
+  },
+  "include": ["**/*.test.ts*", "vitest.browser.setup.ts"]
 }
