@@ -1,11 +1,13 @@
 /// <reference types="vitest/config" />
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
+
 import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -20,14 +22,16 @@ export default defineConfig({
       {
         test: {
           name: 'unit',
-          include: ['src/**/*.unit.{test,spec}.ts'],
+          globals: true,
+          include: ['**/*.unit.test.ts'],
           environment: 'node',
         },
       },
       {
         test: {
           name: 'browser',
-          include: ['**/*.browser.{test,spec}.ts(x)?'],
+          globals: true,
+          include: ['**/*.browser.test.ts(x)?'],
           browser: {
             enabled: true,
             provider: 'playwright',
