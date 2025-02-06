@@ -1,6 +1,6 @@
 import { page } from '@vitest/browser/context';
 import { render } from 'vitest-browser-react';
-import App from './App';
+import App from './app';
 
 it('displays the App component', async () => {
   render(<App />);
