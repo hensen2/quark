@@ -1,4 +1,5 @@
 /// <reference types="vitest/config" />
+
 import path from 'path';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
@@ -24,7 +25,7 @@ export default defineConfig({
         test: {
           name: 'unit',
           globals: true,
-          include: ['**/*.unit.test.ts'],
+          include: ['**/*.test.ts'],
           environment: 'node',
         },
       },
@@ -40,7 +41,7 @@ export default defineConfig({
             instances: [
               {
                 browser: 'chromium',
-                setupFiles: ['./vitest.browser.setup.ts'],
+                setupFiles: ['src/test/vitest.setup.ts'],
               },
             ],
           },

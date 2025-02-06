@@ -1,5 +1,5 @@
 import { test as testBase } from 'vitest';
-import { startWorker, worker } from './src/mocks/browser.ts';
+import { startWorker, worker } from './src/test/mocks/browser.ts';
 
 interface TestContext {
   worker: typeof worker;

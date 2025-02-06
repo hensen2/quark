@@ -25,10 +25,7 @@
     /* Paths */
     "paths": {
       "@/*": ["./src/*"]
-    },
-
-    /* Types */
-    "types": ["node", "vitest/globals"]
+    }
   },
-  "include": ["**/*.test.ts*", "vitest.browser.setup.ts"]
+  "include": ["**/*.test.ts*", "src/test"]
 }
