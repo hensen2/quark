@@ -1,5 +1,6 @@
 import { DataTable } from '@/components/data-table';
 import { type Payment, columns } from '@/components/data-table/columns.tsx';
+import type { JSX } from 'react';
 
 // async function getData(): Promise<Payment[]> {
 //   // Fetch data from your API here.
@@ -26,7 +27,7 @@ function getData(): Payment[] {
   ];
 }
 
-export default function DemoPage() {
+export default function DemoPage(): JSX.Element {
   const data = getData();
 
   return (
