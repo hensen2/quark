@@ -6,7 +6,7 @@ export const worker = setupWorker(...handlers);
 export async function startWorker(): Promise<void> {
   await worker.start({
     quiet: false,
-    onUnhandledRequest(request, print) {
+    onUnhandledRequest(request, print): void {
       if (/(\.(css|tsx?|woff2?))/.test(request.url)) {
         return;
       }

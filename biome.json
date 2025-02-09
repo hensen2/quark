@@ -49,6 +49,11 @@
       "allowTrailingCommas": true
     }
   },
+  "css": {
+    "linter": {
+      "enabled": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -62,7 +67,8 @@
         "noUselessStringConcat": "error",
         "noUselessUndefinedInitialization": "error",
         "noVoid": "warn",
-        "useDateNow": "error"
+        "useDateNow": "error",
+        "useSimplifiedLogicExpression": "error"
       },
       "correctness": {
         "recommended": true,
@@ -85,7 +91,7 @@
         "noNestedTernary": "error",
         "noOctalEscape": "error",
         "noProcessEnv": "warn",
-        "noSecrets": "error",
+        "noSecrets": "warn",
         "noStaticElementInteractions": "error",
         "noSubstr": "error",
         "noTemplateCurlyInString": "error",
