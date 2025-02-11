@@ -8,7 +8,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["test-extend.ts", "public/mockServiceWorker.js"]
+    "ignore": ["test-extend.ts", "mockServiceWorker.js", "routeTree.gen.ts"]
   },
   "organizeImports": {
     "enabled": true
