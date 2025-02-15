@@ -1,9 +1,9 @@
 import { test as testBase } from 'vitest';
 import { startWorker, worker } from './src/test/mocks/browser.ts';
 
-interface TestContext {
+type TestContext = {
   worker: typeof worker;
-}
+};
 
 export const test = testBase.extend<TestContext>({
   worker: [

@@ -105,7 +105,7 @@
         "useCollapsedIf": "error",
         "useConsistentCurlyBraces": "error",
         "useConsistentMemberAccessibility": "error",
-        "useExplicitType": "error",
+        "useExplicitType": "warn",
         "useGuardForIn": "error",
         "useTrimStartEnd": "error",
         "useValidAutocomplete": "error"

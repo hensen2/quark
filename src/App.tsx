@@ -1,23 +1,21 @@
-import { Button } from '@/components/ui/button';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { RouterProvider } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { type JSX, useState } from 'react';
-import DemoPage from './app/page';
+import { AuthLoader } from './lib/auth';
+import { router } from './lib/router';
 
-function App(): JSX.Element {
-  const [count, setCount] = useState(0);
+export const App = (): JSX.Element => {
+  const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-center h-screen gap-2">
-        <h1>Vite + React</h1>
-        <div>
-          <Button onClick={(): void => setCount((count) => count + 1)}>
-            count is {count}
-          </Button>
-        </div>
-        <DemoPage />
-      </div>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <AuthLoader>
+        <RouterProvider router={router} />
+        <TanStackRouterDevtools router={router} />
+      </AuthLoader>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
-}
-
-export default App;
+};

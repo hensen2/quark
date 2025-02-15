@@ -3,15 +3,15 @@ import { handlers } from './handlers.ts';
 
 export const worker = setupWorker(...handlers);
 
-export async function startWorker(): Promise<void> {
+export const startWorker = async (): Promise<void> => {
   await worker.start({
-    quiet: false,
+    quiet: true,
     onUnhandledRequest(request, print): void {
-      if (/(\.(css|tsx?|woff2?))/.test(request.url)) {
+      if (/(\.(css|tsx?|woff2?|vite))/.test(request.url)) {
         return;
       }
 
       print.error();
     },
   });
-}
+};

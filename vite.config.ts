@@ -30,6 +30,7 @@ export default defineConfig({
           globals: true,
           include: ['**/*.test.ts'],
           environment: 'node',
+          setupFiles: ['src/test/vitest.node.setup.ts'],
         },
       },
       {
@@ -44,7 +45,7 @@ export default defineConfig({
             instances: [
               {
                 browser: 'chromium',
-                setupFiles: ['src/test/vitest.setup.ts'],
+                setupFiles: ['src/test/vitest.browser.setup.ts'],
               },
             ],
           },
