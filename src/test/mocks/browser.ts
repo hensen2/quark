@@ -7,7 +7,7 @@ export const startWorker = async (): Promise<void> => {
   await worker.start({
     quiet: true,
     onUnhandledRequest(request, print): void {
-      if (/(\.(css|tsx?|woff2?|vite))/.test(request.url)) {
+      if (/(\.(css|[jt]sx?|woff2?))/.test(request.url)) {
         return;
       }
 

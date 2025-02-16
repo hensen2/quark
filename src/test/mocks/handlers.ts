@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  http.get('http://localhost/api/user', () => {
+  http.get('https://api.example.com/user', () => {
     return HttpResponse.json(
       {
         id: '1',
@@ -11,7 +11,7 @@ export const handlers = [
       { status: 200 },
     );
   }),
-  http.get('http://localhost/api/auth', () => {
+  http.get('https://api.example.com/auth/me', () => {
     return HttpResponse.json(
       {
         isAuthenticated: false,

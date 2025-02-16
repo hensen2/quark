@@ -1,4 +1,3 @@
-// import { useAuth } from '@/lib/auth';
 import type { QueryClient } from '@tanstack/react-query';
 import {
   Link,
@@ -16,7 +15,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 });
 
 function Root(): JSX.Element {
-  // useAuth();
   return (
     <>
       <div className="p-2 flex justify-between">
@@ -29,8 +27,8 @@ function Root(): JSX.Element {
           </Link>
         </div>
         <div>
-          <Link to="/dashboard" className="[&.active]:font-bold">
-            Dashboard
+          <Link to="/login" className="[&.active]:font-bold">
+            Login
           </Link>
         </div>
       </div>

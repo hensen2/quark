@@ -1,7 +1,15 @@
-import axios from 'axios';
+import axios, { type AxiosError } from 'axios';
+const API_BASE_URL = 'https://api.example.com';
+
+declare module '@tanstack/react-query' {
+  interface Register {
+    defaultError: AxiosError;
+  }
+}
 
 export const api = axios.create({
-  baseURL: 'http://localhost',
+  baseURL: API_BASE_URL,
+  adapter: 'fetch',
 });
 
 api.interceptors.response.use(

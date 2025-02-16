@@ -1,4 +1,5 @@
 import { server } from '@/test/mocks/server';
+import { AxiosError } from 'axios';
 import { http, HttpResponse } from 'msw';
 import { api } from './api';
 
@@ -15,7 +16,7 @@ describe('API', () => {
 
   it('should error', async () => {
     server.use(
-      http.get('http://localhost:3000/api/user', () => {
+      http.get('/user', () => {
         return new HttpResponse(null, { status: 500 });
       }),
     );
@@ -23,7 +24,9 @@ describe('API', () => {
     try {
       await api.get('/user');
     } catch (err) {
-      console.log(err.response.status);
+      if (err instanceof AxiosError) {
+        console.log(err.response?.status);
+      }
     }
   });
 });
