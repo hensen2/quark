@@ -23,8 +23,12 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 const formSchema = z.object({
-  email: z.string().min(2).max(50),
-  password: z.string().min(8).max(50),
+  email: z
+    .string()
+    .min(3, 'Email required.')
+    .max(50)
+    .email('Invalid email address.'),
+  password: z.string().min(8, 'Password required.').max(50),
 });
 
 export const LoginForm = ({

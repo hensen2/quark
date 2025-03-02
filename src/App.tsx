@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/context/ThemeContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from '@tanstack/react-router';
@@ -10,12 +11,14 @@ export const App = (): JSX.Element => {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthLoader>
-        <RouterProvider router={router} />
-        <TanStackRouterDevtools router={router} />
-      </AuthLoader>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <QueryClientProvider client={queryClient}>
+        <AuthLoader>
+          <RouterProvider router={router} />
+          <TanStackRouterDevtools router={router} />
+        </AuthLoader>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 };

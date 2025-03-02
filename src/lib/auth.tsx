@@ -11,6 +11,11 @@ type Auth = {
   isAuthenticated: boolean;
 };
 
+type LoginCredentials = {
+  email: string;
+  password: string;
+};
+
 export const getAuth = async (): Promise<Auth> => {
   return await api.get('/auth/me');
 };
@@ -25,10 +30,19 @@ export const useAuth = (): UseQueryResult<Auth> => {
   return useQuery(authQuery);
 };
 
-// const me = async (): Promise<void> => {
-//   const res = await api.get('/auth/me');
-//   auth.status = 'loggedIn';
-//   auth.username = res.data.username;
+export const loginUser = (credentials: LoginCredentials): Promise<Auth> => {
+  return api.post('/auth/login', { ...credentials });
+};
+
+// export const useLogin = () => {
+//   const queryClient = useQueryClient();
+
+//   return useMutation({
+//     mutationFn: loginUser,
+//     onSuccess: () => {
+//       return queryClient.invalidateQueries({ queryKey: authQuery.queryKey });
+//     },
+//   });
 // };
 
 // const login = async (credentials: LoginCredentials): Promise<void> => {
@@ -50,10 +64,6 @@ export const useAuth = (): UseQueryResult<Auth> => {
 //   login,
 //   logout,
 // };
-
-export type LoginCredentials = {
-  username: string;
-};
 
 // export type Auth = {
 //   me: () => void;
