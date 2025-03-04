@@ -4,10 +4,13 @@ import { createFileRoute, redirect } from '@tanstack/react-router';
 import type { JSX } from 'react';
 import { z } from 'zod';
 
-export const Route = createFileRoute('/login')({
-  validateSearch: z.object({
-    redirect: z.string().optional().catch(''),
-  }),
+const loginSearchSchema = z.object({
+  redirect: z.string().optional().catch(''),
+});
+
+export const Route = createFileRoute('/_auth/login')({
+  // validateSearch accepts an object that has a parse method and passes search params to it
+  validateSearch: loginSearchSchema,
   beforeLoad: async ({ context, search }): Promise<void> => {
     const data = await context.queryClient.ensureQueryData(authQueryOptions);
     if (data.isAuthenticated) {

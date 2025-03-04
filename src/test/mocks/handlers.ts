@@ -11,7 +11,16 @@ export const handlers = [
   //     });
   //   }
   // }),
-  http.get('https://api.example.com/auth/status', () => {
+  http.get('https://api.example.com/auth/status', ({ cookies }) => {
+    if (cookies.refreshToken) {
+      return HttpResponse.json(
+        {
+          isAuthenticated: true,
+        },
+        { status: 200 },
+      );
+    }
+
     return HttpResponse.json(
       {
         isAuthenticated: false,
@@ -24,7 +33,25 @@ export const handlers = [
       {
         isAuthenticated: true,
       },
-      { status: 200 },
+      {
+        status: 200,
+        headers: {
+          'Set-Cookie': 'refreshToken=secret',
+        },
+      },
+    );
+  }),
+  http.post('https://api.example.com/auth/logout', () => {
+    return HttpResponse.json(
+      {
+        isAuthenticated: false,
+      },
+      {
+        status: 200,
+        headers: {
+          'Set-Cookie': 'refreshToken=; Max-Age=0',
+        },
+      },
     );
   }),
 ];

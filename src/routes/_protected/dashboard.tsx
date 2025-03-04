@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import type { JSX } from 'react';
 
-export const Route = createFileRoute('/_auth/dashboard')({
+export const Route = createFileRoute('/_protected/dashboard')({
   component: Dashboard,
 });
 

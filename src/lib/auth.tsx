@@ -55,6 +55,23 @@ export const useLogin = (): UseMutationResult<
   });
 };
 
+export const useLogout = (): UseMutationResult<
+  void,
+  AxiosError,
+  void,
+  unknown
+> => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: logout,
+    onSuccess: (): void => {
+      queryClient.setQueryData(authQueryOptions.queryKey, {
+        isAuthenticated: false,
+      });
+    },
+  });
+};
+
 // const login = async (credentials: LoginCredentials): Promise<void> => {
 //   const res = await api.post('/auth/login', { ...credentials });
 //   auth.status = 'loggedIn';

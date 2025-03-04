@@ -2,7 +2,7 @@ import { ForgotForm } from '@/components/forms/forgot-form';
 import { createFileRoute } from '@tanstack/react-router';
 import type { JSX } from 'react';
 
-export const Route = createFileRoute('/forgot')({
+export const Route = createFileRoute('/_auth/forgot')({
   component: Forgot,
 });
 
