@@ -15,9 +15,10 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { useLogin } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link } from '@tanstack/react-router';
+import { Link, useRouter } from '@tanstack/react-router';
 import type { ComponentPropsWithoutRef, JSX, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -35,6 +36,9 @@ export const LoginForm = ({
   className,
   ...props
 }: ComponentPropsWithoutRef<'div'>): JSX.Element => {
+  const login = useLogin();
+  const router = useRouter();
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,10 +49,11 @@ export const LoginForm = ({
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>): void {
+  async function onSubmit(values: z.infer<typeof formSchema>): Promise<void> {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    await login.mutateAsync(values);
+    await router.invalidate();
   }
 
   return (

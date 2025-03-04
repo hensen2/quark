@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --manifest",
     "preview": "vite preview",
     "format": "biome format --write",
     "lint": "biome lint --write",
@@ -60,8 +60,6 @@
     "vitest-browser-react": "^0.0.4"
   },
   "msw": {
-    "workerDirectory": [
-      "public"
-    ]
+    "workerDirectory": ["public"]
   }
 }

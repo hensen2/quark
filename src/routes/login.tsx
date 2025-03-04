@@ -1,8 +1,19 @@
 import { LoginForm } from '@/components/forms/login-form';
-import { createFileRoute } from '@tanstack/react-router';
+import { authQueryOptions } from '@/lib/auth';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 import type { JSX } from 'react';
+import { z } from 'zod';
 
 export const Route = createFileRoute('/login')({
+  validateSearch: z.object({
+    redirect: z.string().optional().catch(''),
+  }),
+  beforeLoad: async ({ context, search }): Promise<void> => {
+    const data = await context.queryClient.ensureQueryData(authQueryOptions);
+    if (data.isAuthenticated) {
+      throw redirect({ to: search.redirect || '/dashboard' });
+    }
+  },
   component: Login,
 });
 

@@ -1,20 +1,28 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  http.get('https://api.example.com/user', () => {
+  // http.get('/', ({ cookies }) => {
+  //   const isAuthenticated = !!cookies.refreshToken;
+
+  //   if (isAuthenticated) {
+  //     return new HttpResponse(null, {
+  //       status: 302,
+  //       headers: { Location: '/dashboard' },
+  //     });
+  //   }
+  // }),
+  http.get('https://api.example.com/auth/status', () => {
     return HttpResponse.json(
       {
-        id: '1',
-        firstName: 'John',
-        lastName: 'Doe',
+        isAuthenticated: false,
       },
       { status: 200 },
     );
   }),
-  http.get('https://api.example.com/auth/me', () => {
+  http.post('https://api.example.com/auth/login', () => {
     return HttpResponse.json(
       {
-        isAuthenticated: false,
+        isAuthenticated: true,
       },
       { status: 200 },
     );

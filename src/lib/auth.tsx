@@ -1,49 +1,59 @@
-import { Spinner } from '@/components/ui/spinner';
 import {
+  type UseMutationResult,
   type UseQueryResult,
   queryOptions,
+  useMutation,
   useQuery,
+  useQueryClient,
 } from '@tanstack/react-query';
+import type { AxiosError } from 'axios';
 import type { JSX, ReactNode } from 'react';
 import { api } from './api';
 
-type Auth = {
+export type Auth = {
   isAuthenticated: boolean;
 };
 
-type LoginCredentials = {
+export type LoginCredentials = {
   email: string;
   password: string;
 };
 
-export const getAuth = async (): Promise<Auth> => {
-  return await api.get('/auth/me');
+export const checkAuth = async (): Promise<Auth> => {
+  return await api.get('/auth/status');
 };
 
-const authQuery = queryOptions({
-  queryKey: ['auth'],
-  queryFn: getAuth,
-  // refetchInterval: 1000 * 60 * 10, // refetch every 10min to refresh auth
-});
-
-export const useAuth = (): UseQueryResult<Auth> => {
-  return useQuery(authQuery);
-};
-
-export const loginUser = (credentials: LoginCredentials): Promise<Auth> => {
+export const login = (credentials: LoginCredentials): Promise<Auth> => {
   return api.post('/auth/login', { ...credentials });
 };
 
-// export const useLogin = () => {
-//   const queryClient = useQueryClient();
+export const logout = (): Promise<void> => {
+  return api.post('/auth/logout');
+};
 
-//   return useMutation({
-//     mutationFn: loginUser,
-//     onSuccess: () => {
-//       return queryClient.invalidateQueries({ queryKey: authQuery.queryKey });
-//     },
-//   });
-// };
+export const authQueryOptions = queryOptions({
+  queryKey: ['auth'],
+  queryFn: checkAuth,
+});
+
+export const useAuth = (): UseQueryResult<Auth> => {
+  return useQuery(authQueryOptions);
+};
+
+export const useLogin = (): UseMutationResult<
+  Auth,
+  AxiosError,
+  LoginCredentials,
+  unknown
+> => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: login,
+    onSuccess: (data): void => {
+      queryClient.setQueryData(authQueryOptions.queryKey, data);
+    },
+  });
+};
 
 // const login = async (credentials: LoginCredentials): Promise<void> => {
 //   const res = await api.post('/auth/login', { ...credentials });
@@ -73,36 +83,11 @@ export const loginUser = (credentials: LoginCredentials): Promise<Auth> => {
 //   username?: string;
 // };
 
-export const AuthLoader = ({
+export const AuthProvider = ({
   children,
-  // renderUnauthenticated,
-  // renderError = (error: Error) => <>{JSON.stringify(error)}</>,
 }: {
   children: ReactNode;
-  // renderUnauthenticated?: () => JSX.Element;
-  // renderError?: (error: Error) => JSX.Element;
 }): JSX.Element => {
-  const { isSuccess, isFetched, status } = useAuth();
-
-  if (isSuccess) {
-    // if (renderUnauthenticated && !data) {
-    //   return renderUnauthenticated();
-    // }
-    return <>{children}</>;
-  }
-
-  if (!isFetched) {
-    return (
-      <div className="flex h-screen w-screen items-center justify-center">
-        <Spinner size="xl" />
-      </div>
-    );
-  }
-
-  if (status === 'error') {
-    return <>Error</>;
-    // return renderError(error);
-  }
-
-  return <>How did I get here?</>;
+  useAuth();
+  return <>{children}</>;
 };

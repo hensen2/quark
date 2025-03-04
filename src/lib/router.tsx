@@ -1,6 +1,8 @@
 import { NotFound } from '@/components/pages/NotFound';
+import { Spinner } from '@/components/ui/spinner';
 import { routeTree } from '@/routeTree.gen';
 import { createRouter } from '@tanstack/react-router';
+import type { JSX } from 'react';
 import { queryClient } from './query-client';
 
 // Create a new router instance
@@ -15,6 +17,13 @@ export const router = createRouter({
   defaultPreloadStaleTime: 0,
   scrollRestoration: true,
   defaultNotFoundComponent: NotFound,
+  defaultPendingComponent: (): JSX.Element => {
+    return (
+      <div className="flex h-screen w-screen items-center justify-center">
+        <Spinner size="xl" />
+      </div>
+    );
+  },
 });
 
 // Register the router instance for type safety
