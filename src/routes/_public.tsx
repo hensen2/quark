@@ -9,25 +9,23 @@ export const Route = createFileRoute('/_public')({
 function PublicRoutes(): JSX.Element {
   return (
     <>
-      <div className="p-2 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <header className="bg-background sticky inset-x-0 top-0 isolate z-10 flex shrink-0 items-center gap-2 border-b">
+        <div className="flex h-14 w-full items-center gap-3 px-4">
           <Link to="/" className="[&.active]:font-bold">
             Home
           </Link>
           <Link to="/about" className="[&.active]:font-bold">
             About
           </Link>
+          <div className="ml-auto flex items-center gap-3">
+            <Link to="/login" className="[&.active]:font-bold">
+              Login
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <Link to="/login" className="[&.active]:font-bold">
-            Login
-          </Link>
-          <ThemeToggle />
-        </div>
-      </div>
-      <hr />
-      <div>Hello "/_public" routes!</div>
-      <hr />
+      </header>
+
       <Outlet />
     </>
   );
