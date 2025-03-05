@@ -29,7 +29,7 @@ const formSchema = z.object({
     .min(3, 'Email required.')
     .max(50)
     .email('Invalid email address.'),
-  password: z.string().min(8, 'Password required.').max(50),
+  password: z.string().min(8, 'Password required.').max(64),
 });
 
 export const LoginForm = ({

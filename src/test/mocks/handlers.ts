@@ -1,10 +1,8 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  // http.get('/', ({ cookies }) => {
-  //   const isAuthenticated = !!cookies.refreshToken;
-
-  //   if (isAuthenticated) {
+  // http.get('http://localhost:5173', ({ cookies }) => {
+  //   if (cookies.refreshToken) {
   //     return new HttpResponse(null, {
   //       status: 302,
   //       headers: { Location: '/dashboard' },
