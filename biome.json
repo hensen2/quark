@@ -58,11 +58,7 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "a11y": {
-        "recommended": true
-      },
       "complexity": {
-        "recommended": true,
         "noExcessiveCognitiveComplexity": "error",
         "noUselessStringConcat": "error",
         "noUselessUndefinedInitialization": "error",
@@ -71,7 +67,6 @@
         "useSimplifiedLogicExpression": "error"
       },
       "correctness": {
-        "recommended": true,
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
@@ -91,7 +86,7 @@
         "noNestedTernary": "error",
         "noOctalEscape": "error",
         "noProcessEnv": "warn",
-        "noSecrets": "warn",
+        "noSecrets": "off",
         "noStaticElementInteractions": "error",
         "noSubstr": "error",
         "noTemplateCurlyInString": "error",
@@ -105,13 +100,12 @@
         "useCollapsedIf": "error",
         "useConsistentCurlyBraces": "error",
         "useConsistentMemberAccessibility": "error",
-        "useExplicitType": "warn",
+        "useExplicitType": "off",
         "useGuardForIn": "error",
         "useTrimStartEnd": "error",
         "useValidAutocomplete": "error"
       },
       "style": {
-        "recommended": true,
         "noImplicitBoolean": "error",
         "noNamespace": "error",
         "noNegationElse": "error",
@@ -131,8 +125,7 @@
         "useThrowOnlyError": "error"
       },
       "suspicious": {
-        "recommended": true,
-        "noConsole": "warn",
+        "noConsole": "off",
         "noEmptyBlockStatements": "error",
         "noEmptyInterface": "error",
         "noMisplacedAssertion": "error",

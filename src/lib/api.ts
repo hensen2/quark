@@ -7,6 +7,15 @@ export const api = axios.create({
   adapter: 'fetch',
 });
 
+export const useResInterceptors = () => {
+  api.interceptors.response.use(
+    (res) => {
+      return res.data;
+    },
+    (err) => Promise.reject(err),
+  );
+};
+
 api.interceptors.response.use(
   (res) => {
     return res.data;
