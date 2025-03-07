@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider } from '@tanstack/react-router';
@@ -14,6 +15,7 @@ export const App = (): JSX.Element => {
           <RouterProvider router={router} />
         </AuthProvider>
       </QueryClientProvider>
+      <Toaster />
     </ThemeProvider>
   );
 };

@@ -8,6 +8,7 @@ import {
 } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
 import type { JSX, ReactNode } from 'react';
+import { toast } from 'sonner';
 import { api } from './api';
 
 export type Auth = {
@@ -105,6 +106,15 @@ export const AuthProvider = ({
 }: {
   children: ReactNode;
 }): JSX.Element => {
-  useAuth();
+  const { error } = useAuth();
+  if (error) {
+    toast('Event has been created', {
+      description: 'Sunday, December 03, 2023 at 9:00 AM',
+      action: {
+        label: 'Undo',
+        onClick: () => console.log('Undo'),
+      },
+    });
+  }
   return <>{children}</>;
 };

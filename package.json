@@ -12,7 +12,7 @@
     "check": "biome check --verbose",
     "check:fix": "biome check --write --verbose",
     "test": "vitest",
-    "test:unit": "vitest --project=unit",
+    "test:unit": "vitest --project=unit --ui",
     "test:integration": "vitest --project=browser",
     "test:storybook": "vitest --project=storybook",
     "test:ui": "vitest --ui",
@@ -32,9 +32,11 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.473.0",
+    "next-themes": "^0.4.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
+    "sonner": "^2.0.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.2"
@@ -61,6 +63,7 @@
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@vitest/browser": "^3.0.1",
     "@vitest/coverage-v8": "^3.0.1",
+    "@vitest/ui": "^3.0.7",
     "globals": "^15.14.0",
     "msw": "^2.7.0",
     "playwright": "^1.49.1",
@@ -73,8 +76,6 @@
     "vitest-browser-react": "^0.0.4"
   },
   "msw": {
-    "workerDirectory": [
-      "public"
-    ]
+    "workerDirectory": ["public"]
   }
 }
