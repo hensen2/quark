@@ -1,15 +1,13 @@
-import { Home } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
-import type { JSX } from 'react';
+import { Home } from 'lucide-react';
 
 export const Route = createFileRoute('/_auth')({
   component: AuthRoutes,
 });
 
-function AuthRoutes(): JSX.Element {
+function AuthRoutes() {
   return (
     <div className="bg-muted">
       <header className="sticky inset-x-0 top-0 isolate z-10 flex shrink-0 items-center gap-2">

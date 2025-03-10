@@ -7,7 +7,7 @@ import {
   useQueryClient,
 } from '@tanstack/react-query';
 import type { AxiosError } from 'axios';
-import type { JSX, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { toast } from 'sonner';
 import { api } from './api';
 
@@ -105,7 +105,7 @@ export const AuthProvider = ({
   children,
 }: {
   children: ReactNode;
-}): JSX.Element => {
+}) => {
   const { error } = useAuth();
   if (error) {
     toast('Event has been created', {

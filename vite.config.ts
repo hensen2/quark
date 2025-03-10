@@ -16,11 +16,12 @@ const dirname =
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
 export default defineConfig({
   plugins: [
+    react(),
+    tailwindcss(),
     TanStackRouterVite({
+      target: 'react',
       autoCodeSplitting: true,
     }),
-    tailwindcss(),
-    react(),
   ],
   resolve: {
     alias: {

@@ -1,8 +1,7 @@
 import axios from 'axios';
-const API_BASE_URL = 'https://api.example.com';
 
 export const axiosConfig = {
-  baseURL: API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
   adapter: 'fetch',
 };
