@@ -1,7 +1,6 @@
 import { LoginForm } from '@/components/forms/login-form';
 import { authQueryOptions } from '@/lib/auth';
 import { createFileRoute, redirect } from '@tanstack/react-router';
-import type { JSX } from 'react';
 import { z } from 'zod';
 
 const loginSearchSchema = z.object({
@@ -20,7 +19,7 @@ export const Route = createFileRoute('/_auth/login')({
   component: Login,
 });
 
-function Login(): JSX.Element {
+function Login() {
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">

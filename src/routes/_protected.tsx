@@ -7,7 +7,6 @@ import {
   redirect,
   useRouter,
 } from '@tanstack/react-router';
-import type { JSX } from 'react';
 
 export const Route = createFileRoute('/_protected')({
   beforeLoad: async ({ context, location }): Promise<void> => {
@@ -28,7 +27,7 @@ export const Route = createFileRoute('/_protected')({
   component: ProtectedRoutes,
 });
 
-function ProtectedRoutes(): JSX.Element {
+function ProtectedRoutes() {
   const logout = useLogout();
   const router = useRouter();
 

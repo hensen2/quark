@@ -6,8 +6,7 @@ import {
   createRootRouteWithContext,
   redirect,
 } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
-import type { JSX } from 'react';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 type RouterContext = {
   queryClient: QueryClient;
@@ -25,7 +24,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: Root,
 });
 
-function Root(): JSX.Element {
+function Root() {
   return (
     <>
       <Outlet />
