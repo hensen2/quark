@@ -1,12 +1,9 @@
 import {
-  type UseMutationResult,
-  type UseQueryResult,
   queryOptions,
   useMutation,
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import type { AxiosError } from 'axios';
 import type { ReactNode } from 'react';
 import { toast } from 'sonner';
 import { api } from './api';
@@ -37,16 +34,11 @@ export const authQueryOptions = queryOptions({
   queryFn: checkAuth,
 });
 
-export const useAuth = (): UseQueryResult<Auth> => {
+export const useAuth = () => {
   return useQuery(authQueryOptions);
 };
 
-export const useLogin = (): UseMutationResult<
-  Auth,
-  AxiosError,
-  LoginCredentials,
-  unknown
-> => {
+export const useLogin = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: login,
@@ -56,12 +48,7 @@ export const useLogin = (): UseMutationResult<
   });
 };
 
-export const useLogout = (): UseMutationResult<
-  void,
-  AxiosError,
-  void,
-  unknown
-> => {
+export const useLogout = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: logout,

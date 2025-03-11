@@ -3,9 +3,7 @@ import { Loader2, Mail } from 'lucide-react';
 
 import { Button } from '../button';
 
-type Story = StoryObj<typeof Button>;
-
-const meta: Meta<typeof Button> = {
+const meta = {
   title: 'ui/Button',
   component: Button,
   argTypes: {
@@ -17,16 +15,24 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Disables the button',
     },
+    asChild: {
+      control: 'boolean',
+      description:
+        'Changes the default rendered element for the one passed as a child, merging their props and behavior',
+    },
   },
   args: {
     variant: 'default',
     size: 'default',
     children: 'Button',
     disabled: false,
+    asChild: false,
   },
-};
+} satisfies Meta<typeof Button>;
 
 export default meta;
+
+type Story = StoryObj<typeof Button>;
 
 /**
  * The default form of the button, used for primary actions and commands.
@@ -155,6 +161,9 @@ export const Disabled: Story = {
   },
 };
 
+/**
+ * The default dark mode form of the button, used for primary actions and commands.
+ */
 export const Dark: Story = {
   parameters: {
     themes: {
@@ -163,6 +172,9 @@ export const Dark: Story = {
   },
 };
 
+/**
+ * The default mobile viewport form of the button, used for primary actions and commands.
+ */
 export const Mobile: Story = {
   parameters: {
     viewport: {

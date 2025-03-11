@@ -26,5 +26,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["**/*.test.ts*", "src/test"]
+  "include": ["**/*.test.ts*", "src/test", ".storybook/**/*"]
 }
