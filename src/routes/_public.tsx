@@ -1,7 +1,20 @@
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
+import {
+  Link,
+  Outlet,
+  createFileRoute,
+  redirect,
+  // redirect,
+} from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_public')({
+  beforeLoad: ({ context: { auth } }) => {
+    if (auth.loaded && auth.authClient) {
+      throw redirect({
+        to: '/dashboard',
+      });
+    }
+  },
   component: PublicRoutes,
 });
 

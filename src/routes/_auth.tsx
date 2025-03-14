@@ -1,9 +1,21 @@
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
+import {
+  Link,
+  Outlet,
+  createFileRoute,
+  redirect,
+} from '@tanstack/react-router';
 import { Home } from 'lucide-react';
 
 export const Route = createFileRoute('/_auth')({
+  beforeLoad: ({ context: { auth } }) => {
+    if (auth.loaded && auth.authClient) {
+      throw redirect({
+        to: '/dashboard',
+      });
+    }
+  },
   component: AuthRoutes,
 });
 
@@ -17,7 +29,6 @@ function AuthRoutes() {
               <Home className="absolute h-[1.2rem] w-[1.2rem]" />
             </Link>
           </Button>
-
           <ThemeToggle />
         </div>
       </header>

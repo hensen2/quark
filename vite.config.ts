@@ -28,6 +28,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    manifest: true,
+  },
   test: {
     coverage: {
       enabled: true,

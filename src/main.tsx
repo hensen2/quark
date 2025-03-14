@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import { App } from './app';
+import { AuthProvider } from './context/AuthContext.tsx';
 
 async function enableMocking(): Promise<void> {
   if (import.meta.env.MODE === 'development') {
@@ -13,7 +14,9 @@ async function enableMocking(): Promise<void> {
 enableMocking().then(() => {
   createRoot(document.getElementById('root') as HTMLElement).render(
     <StrictMode>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </StrictMode>,
   );
 });

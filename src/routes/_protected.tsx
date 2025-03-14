@@ -1,18 +1,17 @@
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { authQueryOptions, useLogout } from '@/lib/auth';
+import { useAuth } from '@/context/AuthContext';
 import {
   Outlet,
   createFileRoute,
   redirect,
+  // redirect,
   useRouter,
 } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_protected')({
-  beforeLoad: async ({ context, location }): Promise<void> => {
-    const data = await context.queryClient.ensureQueryData(authQueryOptions);
-
-    if (!data.isAuthenticated) {
+  beforeLoad: ({ context: { auth }, location }) => {
+    if (auth.loaded && !auth.authClient) {
       throw redirect({
         to: '/login',
         search: {
@@ -28,11 +27,11 @@ export const Route = createFileRoute('/_protected')({
 });
 
 function ProtectedRoutes() {
-  const logout = useLogout();
+  const auth = useAuth();
   const router = useRouter();
 
   async function onClick(): Promise<void> {
-    await logout.mutateAsync();
+    await auth.onLogout();
     await router.invalidate();
   }
 

@@ -15,11 +15,12 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useLogin } from '@/lib/auth';
+import { useAuth } from '@/context/AuthContext';
+// import { useLogin } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useRouter } from '@tanstack/react-router';
-import type { ComponentPropsWithoutRef, JSX, ReactElement } from 'react';
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -35,11 +36,11 @@ const formSchema = z.object({
 export const LoginForm = ({
   className,
   ...props
-}: ComponentPropsWithoutRef<'div'>): JSX.Element => {
-  const login = useLogin();
+}: ComponentPropsWithoutRef<'div'>) => {
+  const auth = useAuth();
   const router = useRouter();
 
-  // 1. Define your form.
+  // 1. Defines your form schema for validation
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,11 +49,9 @@ export const LoginForm = ({
     },
   });
 
-  // 2. Define a submit handler.
+  // 2. Defines a submit handler with validated form values
   async function onSubmit(values: z.infer<typeof formSchema>): Promise<void> {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    await login.mutateAsync(values);
+    await auth.onLogin(values);
     await router.invalidate();
   }
 

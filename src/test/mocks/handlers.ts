@@ -1,4 +1,4 @@
-import { http, HttpResponse } from 'msw';
+import { http, HttpResponse, delay } from 'msw';
 
 export const handlers = [
   http.get('/', ({ cookies }) => {
@@ -9,13 +9,24 @@ export const handlers = [
       });
     }
   }),
-  http.get('https://api.example.com/auth/status', ({ cookies }) => {
+  http.get('/dashboard', ({ cookies }) => {
+    if (!cookies.refreshToken) {
+      return new HttpResponse(null, {
+        status: 302,
+        headers: { Location: '/' },
+      });
+    }
+  }),
+  http.get('/auth/status', async ({ cookies }) => {
+    await delay(500);
     if (cookies.refreshToken) {
       return HttpResponse.json(
         {
           isAuthenticated: true,
         },
-        { status: 200 },
+        {
+          status: 200,
+        },
       );
     }
 
@@ -26,7 +37,7 @@ export const handlers = [
       { status: 200 },
     );
   }),
-  http.post('https://api.example.com/auth/login', () => {
+  http.post('/auth/login', () => {
     return HttpResponse.json(
       {
         isAuthenticated: true,
@@ -39,7 +50,7 @@ export const handlers = [
       },
     );
   }),
-  http.post('https://api.example.com/auth/logout', () => {
+  http.post('/auth/logout', () => {
     return HttpResponse.json(
       {
         isAuthenticated: false,

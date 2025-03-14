@@ -1,32 +1,23 @@
-import { authQueryOptions } from '@/lib/auth';
-import type { QueryClient } from '@tanstack/react-query';
+import { Toaster } from '@/components/ui/sonner';
+import type { RouterContext } from '@/lib/router';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import {
-  Outlet,
-  createRootRouteWithContext,
-  redirect,
-} from '@tanstack/react-router';
+import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
-type RouterContext = {
-  queryClient: QueryClient;
-};
-
 export const Route = createRootRouteWithContext<RouterContext>()({
-  beforeLoad: async ({ context, location }): Promise<void> => {
-    const data = await context.queryClient.ensureQueryData(authQueryOptions);
-    if (data.isAuthenticated && location.pathname !== '/dashboard') {
-      throw redirect({
-        to: '/dashboard',
-      });
-    }
-  },
+  // beforeLoad: async ({ context: { auth } }) => {
+  //   if (!auth.loaded) {
+  //     // await auth.status();
+  //     // auth.loaded = true;
+  //   }
+  // },
   component: Root,
 });
 
 function Root() {
   return (
     <>
+      <Toaster />
       <Outlet />
       <ReactQueryDevtools />
       <TanStackRouterDevtools />
