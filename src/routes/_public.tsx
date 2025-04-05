@@ -1,27 +1,15 @@
-import { ThemeToggle } from '@/components/ui/theme-toggle';
-import {
-  Link,
-  Outlet,
-  createFileRoute,
-  redirect,
-  // redirect,
-} from '@tanstack/react-router';
+import StackedLayout from '@/components/layouts/stacked-layout';
+import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_public')({
-  beforeLoad: ({ context: { auth } }) => {
-    if (auth.loaded && auth.authClient) {
-      throw redirect({
-        to: '/dashboard',
-      });
-    }
-  },
   component: PublicRoutes,
 });
 
 function PublicRoutes() {
   return (
     <>
-      <header className="bg-background sticky inset-x-0 top-0 isolate z-10 flex shrink-0 items-center gap-2 border-b">
+      <StackedLayout />
+      {/* <header className="bg-background sticky inset-x-0 top-0 isolate z-10 flex shrink-0 items-center gap-2 border-b">
         <div className="flex h-14 w-full items-center gap-3 px-4">
           <Link to="/" className="[&.active]:font-bold">
             Home
@@ -38,7 +26,7 @@ function PublicRoutes() {
         </div>
       </header>
 
-      <Outlet />
+      <Outlet /> */}
     </>
   );
 }

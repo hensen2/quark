@@ -1,28 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useAuth } from '@/context/AuthContext';
-import {
-  Outlet,
-  createFileRoute,
-  redirect,
-  // redirect,
-  useRouter,
-} from '@tanstack/react-router';
+import { Outlet, createFileRoute, useRouter } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_protected')({
-  beforeLoad: ({ context: { auth }, location }) => {
-    if (auth.loaded && !auth.authClient) {
-      throw redirect({
-        to: '/login',
-        search: {
-          // Use the current location to power a redirect after login
-          // (Do not use `router.state.resolvedLocation` as it can
-          // potentially lag behind the actual current location)
-          redirect: location.href,
-        },
-      });
-    }
-  },
   component: ProtectedRoutes,
 });
 

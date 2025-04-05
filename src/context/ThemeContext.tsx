@@ -1,9 +1,8 @@
 import {
-  type JSX,
   type ReactNode,
   createContext,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useState,
 } from 'react';
 
@@ -30,14 +29,14 @@ const ThemeProviderContext = createContext<ThemeContext>(initialState);
 export const ThemeProvider = ({
   children,
   defaultTheme = 'system',
-  storageKey = 'vite-ui-theme',
+  storageKey = 'theme',
   ...props
-}: ThemeProviderProps): JSX.Element => {
+}: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = window.document.documentElement;
 
     root.classList.remove('light', 'dark');

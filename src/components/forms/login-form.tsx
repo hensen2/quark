@@ -15,8 +15,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useAuth } from '@/context/AuthContext';
-// import { useLogin } from '@/lib/auth';
+import { useLogin } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useRouter } from '@tanstack/react-router';
@@ -37,7 +36,7 @@ export const LoginForm = ({
   className,
   ...props
 }: ComponentPropsWithoutRef<'div'>) => {
-  const auth = useAuth();
+  const login = useLogin();
   const router = useRouter();
 
   // 1. Defines your form schema for validation
@@ -51,7 +50,7 @@ export const LoginForm = ({
 
   // 2. Defines a submit handler with validated form values
   async function onSubmit(values: z.infer<typeof formSchema>): Promise<void> {
-    await auth.onLogin(values);
+    await login.mutateAsync(values);
     await router.invalidate();
   }
 

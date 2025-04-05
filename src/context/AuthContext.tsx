@@ -1,4 +1,3 @@
-import { Spinner } from '@/components/ui/spinner';
 import { checkAuth, login, logout } from '@/lib/auth';
 import {
   type ReactNode,
@@ -18,7 +17,6 @@ export type LoginCredentials = {
 export type AuthContext = {
   loaded: boolean;
   authClient: boolean;
-  // status: () => Promise<void>;
   onLogin: (credentials: LoginCredentials) => Promise<void>;
   onLogout: () => Promise<void>;
 };
@@ -50,13 +48,6 @@ export const AuthProvider = ({ children, ...props }: AuthProviderProps) => {
     loadAuth();
   }, []);
 
-  // const status = useCallback(async () => {
-  //   await checkAuth();
-  // setAuthClient(isAuthenticated);
-  // setLoaded(true);
-  // router.invalidate();
-  // }, []);
-
   const onLogin = useCallback(async (credentials: LoginCredentials) => {
     const { isAuthenticated } = await login(credentials);
     setAuthClient(isAuthenticated);
@@ -76,14 +67,6 @@ export const AuthProvider = ({ children, ...props }: AuthProviderProps) => {
     }),
     [loaded, authClient, onLogin, onLogout],
   );
-
-  if (!loaded) {
-    return (
-      <div className="flex h-screen w-screen items-center justify-center">
-        <Spinner size="xl" />
-      </div>
-    );
-  }
 
   return (
     <AuthProviderContext {...props} value={value}>

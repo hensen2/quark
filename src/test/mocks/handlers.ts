@@ -18,8 +18,8 @@ export const handlers = [
     }
   }),
   http.get('/auth/status', async ({ cookies }) => {
-    await delay(500);
-    if (cookies.refreshToken) {
+    await delay(0);
+    if (cookies.sessionId === 'user') {
       return HttpResponse.json(
         {
           isAuthenticated: true,
@@ -34,7 +34,12 @@ export const handlers = [
       {
         isAuthenticated: false,
       },
-      { status: 200 },
+      {
+        status: 200,
+        headers: {
+          'Set-Cookie': 'sessionId=anonymous',
+        },
+      },
     );
   }),
   http.post('/auth/login', () => {

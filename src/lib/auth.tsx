@@ -60,34 +60,6 @@ export const useLogout = () => {
   });
 };
 
-// const login = async (credentials: LoginCredentials): Promise<void> => {
-//   const res = await api.post('/auth/login', { ...credentials });
-//   auth.status = 'loggedIn';
-//   auth.username = res.data.username;
-// };
-
-// const logout = async (): Promise<void> => {
-//   await api.post('/auth/logout');
-//   auth.status = 'loggedOut';
-//   auth.username = undefined;
-// };
-
-// export const auth: Auth = {
-//   status: 'loggedOut',
-//   username: undefined,
-//   me,
-//   login,
-//   logout,
-// };
-
-// export type Auth = {
-//   me: () => void;
-//   login: (credentials: LoginCredentials) => void;
-//   logout: () => void;
-//   status: 'loggedOut' | 'loggedIn';
-//   username?: string;
-// };
-
 export const AuthProvider = ({
   children,
 }: {
