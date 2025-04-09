@@ -35,11 +35,7 @@ export const router = createRouter({
     );
   },
   InnerWrap: ({ children }) => {
-    return (
-      <ThemeProvider defaultTheme="system" storageKey="theme">
-        {children}
-      </ThemeProvider>
-    );
+    return <ThemeProvider>{children}</ThemeProvider>;
   },
 });
 

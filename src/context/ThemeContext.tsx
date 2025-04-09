@@ -16,7 +16,7 @@ type ThemeProviderProps = {
 
 type ThemeContext = {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
+  setTheme: () => void;
 };
 
 const initialState: ThemeContext = {
@@ -56,7 +56,18 @@ export const ThemeProvider = ({
 
   const value = {
     theme,
-    setTheme: (theme: Theme): void => {
+    setTheme: (): void => {
+      const root = window.document.documentElement;
+      const isDark = root.classList.contains('dark');
+
+      if (isDark) {
+        root.classList.replace('dark', 'light');
+      } else {
+        root.classList.replace('light', 'dark');
+      }
+
+      const theme = isDark ? 'light' : 'dark';
+
       localStorage.setItem(storageKey, theme);
       setTheme(theme);
     },

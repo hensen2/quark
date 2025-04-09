@@ -50,6 +50,9 @@
     }
   },
   "css": {
+    "formatter": {
+      "enabled": true
+    },
     "linter": {
       "enabled": true
     }
@@ -102,6 +105,7 @@
         "useConsistentMemberAccessibility": "error",
         "useExplicitType": "off",
         "useGuardForIn": "error",
+        "useSortedClasses": "off",
         "useTrimStartEnd": "error",
         "useValidAutocomplete": "error"
       },
