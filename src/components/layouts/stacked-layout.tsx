@@ -3,7 +3,7 @@ import SiteHeader from './site-header';
 
 export default function StackedLayout() {
   return (
-    <div className="flexbox-v relative isolate min-h-svh">
+    <div className="flexbox-v relative isolate min-h-svh h-[2000px]">
       <SiteHeader />
       {/* Content */}
       <main className="flexbox-v flex-1 pb-2 lg:px-2 ">

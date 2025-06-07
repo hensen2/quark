@@ -1,3 +1,4 @@
+// @ts-ignore
 import { cn } from '@/lib/utils';
 import { Link } from '@tanstack/react-router';
 import type * as React from 'react';
