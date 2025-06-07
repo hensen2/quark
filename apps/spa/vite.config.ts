@@ -26,10 +26,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@workspace/ui': path.resolve(__dirname, '../../packages/ui/src'),
+      '@workspace/shared': path.resolve(__dirname, '../../packages/shared/src'),
     },
   },
   build: {
     manifest: true,
+    target: 'es2022',
+    minify: 'esbuild',
   },
   test: {
     coverage: {

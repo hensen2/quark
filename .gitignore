@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*storybook.log*
 
 # Development deps and outputs
 node_modules
@@ -14,13 +15,15 @@ build
 dist-ssr
 *.local
 routeTree.gen.ts
+.vite/
+.turbo/
 
 # Local env files
 .env
 .env.local
 .env.development.local
 .env.test.local
-.env.production.local
+.env.production*
 
 # Testing
 coverage
@@ -35,5 +38,8 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
 
-*storybook.log
+# pnpm
+.pnpm-store/
+.pnpm-debug.log*
