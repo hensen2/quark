@@ -7,9 +7,8 @@ const config: StorybookConfig = {
     '**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
-    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
-    '@storybook/experimental-addon-test',
+    '@storybook/addon-vitest',
     '@storybook/addon-themes',
     '@storybook/addon-a11y',
   ],
@@ -18,4 +17,5 @@ const config: StorybookConfig = {
     options: {},
   },
 };
+
 export default config;

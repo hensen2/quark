@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import colors from 'tailwindcss/colors';
 
 type ColorKey = keyof typeof colors;

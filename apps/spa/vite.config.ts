@@ -7,7 +7,7 @@ import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 import { fileURLToPath } from 'node:url';
-import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 const dirname =
   typeof __dirname !== 'undefined'
     ? __dirname

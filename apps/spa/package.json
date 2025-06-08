@@ -24,8 +24,8 @@
     "@radix-ui/react-navigation-menu": "catalog:",
     "@radix-ui/react-separator": "catalog:",
     "@radix-ui/react-slot": "catalog:",
-    "@tanstack/react-router": "catalog:",
     "@tanstack/react-query": "catalog:",
+    "@tanstack/react-router": "catalog:",
     "axios": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
@@ -42,6 +42,12 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@chromatic-com/storybook": "catalog:",
+    "@storybook/addon-a11y": "catalog:",
+    "@storybook/addon-themes": "catalog:",
+    "@storybook/addon-vitest": "catalog:",
+    "@storybook/react-vite": "catalog:",
     "@tailwindcss/postcss": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/react-query-devtools": "catalog:",
@@ -51,32 +57,23 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",
-    "tailwindcss": "catalog:",
-    "@biomejs/biome": "catalog:",
-    "vitest": "catalog:",
     "@vitest/browser": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "@vitest/ui": "catalog:",
-    "typescript": "catalog:",
-    "storybook": "catalog:",
-    "@chromatic-com/storybook": "catalog:",
-    "@storybook/addon-a11y": "catalog:",
-    "@storybook/addon-actions": "catalog:",
-    "@storybook/addon-essentials": "catalog:",
-    "@storybook/addon-themes": "catalog:",
-    "@storybook/blocks": "catalog:",
-    "@storybook/experimental-addon-test": "catalog:",
-    "@storybook/react": "catalog:",
-    "@storybook/react-vite": "catalog:",
-    "@storybook/test": "catalog:",
     "msw": "catalog:",
     "playwright": "catalog:",
     "postcss": "catalog:",
+    "storybook": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
     "vite": "catalog:",
+    "vitest": "catalog:",
     "vitest-browser-react": "catalog:"
   },
   "msw": {
-    "workerDirectory": ["public"]
+    "workerDirectory": [
+      "public"
+    ]
   },
   "packageManager": "pnpm@10.11.1"
 }
