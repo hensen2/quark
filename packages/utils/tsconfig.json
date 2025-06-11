@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../configs/typescript/tsconfig.lib.json",
+  "compilerOptions": {
+    // Output configuration
+    "outDir": "./dist", // Output directory
+    "rootDir": "./src", // Source directory
+    "emitDeclarationOnly": true, // Only emit declaration files
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
+}
