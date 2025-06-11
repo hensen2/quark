@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // Node.js environment
+    "lib": ["ES2022"], // No DOM types for backend
+    "target": "ES2022", // Modern Node.js supports ES2022
+    "module": "NodeNext", // Node.js module resolution
+    "moduleResolution": "NodeNext", // Node.js module resolution
+
+    // Backend-specific settings
+    "allowJs": true, // Often needed for config files
+    "resolveJsonModule": true, // Import JSON configs
+    "esModuleInterop": true, // Better interop with CommonJS
+
+    // Emit settings for backend
+    "noEmit": false, // We emit for backend
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Node.js types
+    "types": [
+      "node", // Node.js types
+      "@types/express", // If using Express
+      "@types/jest" // If using Jest
+    ],
+
+    // Experimental decorators (if using NestJS, TypeORM, etc.)
+    "experimentalDecorators": true, // Enable decorators
+    "emitDecoratorMetadata": true, // Emit decorator metadata
+
+    // Path mapping for backend
+    "paths": {
+      "@/*": ["./src/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@services/*": ["./src/services/*"],
+      "@models/*": ["./src/models/*"],
+      "@middleware/*": ["./src/middleware/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@config/*": ["./src/config/*"],
+      "@workspace/*": ["../../packages/*/src"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.json" // Include JSON schema files
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.e2e-spec.ts"
+  ],
+  "ts-node": {
+    // ts-node configuration for running TypeScript directly
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS" // Use CommonJS for ts-node
+    }
+  }
+}

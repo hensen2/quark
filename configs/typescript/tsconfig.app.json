@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // React-specific settings
+    "jsx": "react-jsx", // Use React 17+ JSX transform
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // Add DOM types for browser
+
+    // Vite-specific optimizations
+    "useDefineForClassFields": true, // Required for Vite
+    "allowJs": true, // Allow JS files in React projects
+    "checkJs": false, // Don't type-check JS files
+    "moduleDetection": "force" // Force module detection for Vite
+  },
+  "include": ["src/**/*", "vite.config.ts"]
+}
