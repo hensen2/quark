@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Label } from '../label';
+import { Label } from '../src/components';
 
 /**
  * Renders an accessible label associated with controls.

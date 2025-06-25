@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Input } from '../input';
+import { Input } from '../src/components';
 
 /**
  * Displays a form input field or a component that looks like an input field.
@@ -71,10 +71,7 @@ export const WithButton: Story = {
   render: (args) => (
     <div className="flex items-center space-x-2">
       <Input {...args} />
-      <button
-        className="rounded bg-primary px-4 py-2 text-primary-foreground"
-        type="submit"
-      >
+      <button className="rounded bg-primary px-4 py-2 text-primary-foreground" type="submit">
         Subscribe
       </button>
     </div>

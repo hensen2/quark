@@ -1,5 +1,5 @@
-import { ForgotForm } from '@/components/forms/forgot-form';
 import { createFileRoute } from '@tanstack/react-router';
+import { ForgotForm } from '@/components/forms/forgot-form';
 
 export const Route = createFileRoute('/_auth/forgot')({
   component: Forgot,

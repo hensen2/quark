@@ -8,19 +8,17 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Input,
-} from '@vite-react-ts/ui';
-import type { ComponentPropsWithoutRef, ReactElement } from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
+  Input,
+} from '@vite-react-ts/ui';
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import { useLogin } from '@/lib/auth';
 
 const formSchema = z.object({

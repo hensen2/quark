@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../card';
+} from '../src/components';
 
 const notifications = [
   {

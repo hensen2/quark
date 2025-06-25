@@ -1,13 +1,13 @@
-import { checkAuth, login, logout } from '@/lib/auth';
 import {
-  type ReactNode,
   createContext,
+  type ReactNode,
   useCallback,
   useContext,
   useEffect,
   useMemo,
   useState,
 } from 'react';
+import { checkAuth, login, logout } from '@/lib/auth';
 
 export type LoginCredentials = {
   email: string;

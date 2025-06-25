@@ -1,6 +1,6 @@
-import { LoginForm } from '@/components/forms/login-form';
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
+import { LoginForm } from '@/components/forms/login-form';
 
 const loginSearchSchema = z.object({
   redirect: z.string().optional().catch(''),

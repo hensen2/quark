@@ -16,7 +16,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '../dropdown-menu';
+} from '../src/components';
 
 /**
  * Displays a menu to the user — such as a set of actions or functions —
