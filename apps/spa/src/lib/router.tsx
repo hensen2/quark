@@ -1,9 +1,9 @@
-import { NotFound } from '@/components/pages/NotFound';
-import { Spinner } from '@/components/ui/spinner';
-import { ThemeProvider } from '@/context/ThemeContext';
-import { routeTree } from '@/routeTree.gen';
 import { type QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createRouter } from '@tanstack/react-router';
+import { Spinner } from '@vite-react-ts/ui';
+import { NotFound } from '@/components/pages/NotFound';
+import { ThemeProvider } from '@/context/ThemeContext';
+import { routeTree } from '@/routeTree.gen';
 import { queryClient } from './query-client';
 
 export type RouterContext = {
@@ -30,9 +30,7 @@ export const router = createRouter({
     );
   },
   Wrap: ({ children }) => {
-    return (
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    );
+    return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
   },
   InnerWrap: ({ children }) => {
     return <ThemeProvider>{children}</ThemeProvider>;

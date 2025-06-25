@@ -1,17 +1,17 @@
-import { cn } from '@/lib/utils';
 import type { DialogProps } from '@radix-ui/react-dialog';
 import { linkOptions, useRouter } from '@tanstack/react-router';
-import { File } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
-import { Button } from '../ui/button';
+import { cn } from '@utils';
 import {
+  Button,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
-} from '../ui/command';
+} from '@vite-react-ts/ui';
+import { File } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
 
 const links = linkOptions([
   {

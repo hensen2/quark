@@ -1,17 +1,12 @@
 // // @ts-ignore
-// import { cn } from '@/lib/utils';
+
 // import { Link } from '@tanstack/react-router';
+// import { cn } from '@utils';
+// import { Button, TouchTarget } from '@vite-react-ts/ui';
 // import type * as React from 'react';
-// import { Button } from '../ui/button';
-// import { TouchTarget } from '../ui/touch-target';
 
 // function Navbar({ className, ...props }: React.ComponentProps<'nav'>) {
-//   return (
-//     <nav
-//       className={cn('flex flex-1 items-center gap-4 py-2.5', className)}
-//       {...props}
-//     />
-//   );
+//   return <nav className={cn('flex flex-1 items-center gap-4 py-2.5', className)} {...props} />;
 // }
 
 // function NavbarDivider({ className, ...props }: React.ComponentProps<'div'>) {
@@ -25,19 +20,11 @@
 // }
 
 // function NavbarSection({ className, ...props }: React.ComponentProps<'div'>) {
-//   return (
-//     <div className={cn('flex items-center gap-3', className)} {...props} />
-//   );
+//   return <div className={cn('flex items-center gap-3', className)} {...props} />;
 // }
 
 // function NavbarSpacer({ className, ...props }: React.ComponentProps<'div'>) {
-//   return (
-//     <div
-//       aria-hidden="true"
-//       className={cn('-ml-4 flex-1', className)}
-//       {...props}
-//     />
-//   );
+//   return <div aria-hidden="true" className={cn('-ml-4 flex-1', className)} {...props} />;
 // }
 
 // function NavbarItem({
@@ -77,11 +64,7 @@
 //         />
 //       )}
 //       {'href' in props ? (
-//         <Link
-//           className={classes}
-//           data-current={current ? 'true' : undefined}
-//           {...props}
-//         >
+//         <Link className={classes} data-current={current ? 'true' : undefined} {...props}>
 //           <TouchTarget>{children}</TouchTarget>
 //         </Link>
 //       ) : (
@@ -102,11 +85,4 @@
 //   return <span className={cn('truncate', className)} {...props} />;
 // }
 
-// export {
-//   Navbar,
-//   NavbarDivider,
-//   NavbarSection,
-//   NavbarSpacer,
-//   NavbarItem,
-//   NavbarLabel,
-// };
+// export { Navbar, NavbarDivider, NavbarSection, NavbarSpacer, NavbarItem, NavbarLabel };

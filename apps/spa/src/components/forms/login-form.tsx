@@ -1,11 +1,18 @@
-import { Button } from '@/components/ui/button';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Link, useRouter } from '@tanstack/react-router';
+import { cn } from '@utils';
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+  Input,
+} from '@vite-react-ts/ui';
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import {
   Form,
   FormControl,
@@ -14,28 +21,14 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
 import { useLogin } from '@/lib/auth';
-import { cn } from '@/lib/utils';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Link, useRouter } from '@tanstack/react-router';
-import type { ComponentPropsWithoutRef, ReactElement } from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 const formSchema = z.object({
-  email: z
-    .string()
-    .min(3, 'Email required.')
-    .max(50)
-    .email('Invalid email address.'),
+  email: z.string().min(3, 'Email required.').max(50).email('Invalid email address.'),
   password: z.string().min(8, 'Password required.').max(64),
 });
 
-export const LoginForm = ({
-  className,
-  ...props
-}: ComponentPropsWithoutRef<'div'>) => {
+export const LoginForm = ({ className, ...props }: ComponentPropsWithoutRef<'div'>) => {
   const login = useLogin();
   const router = useRouter();
 
@@ -59,9 +52,7 @@ export const LoginForm = ({
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
+          <CardDescription>Enter your email below to login to your account</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -101,12 +92,7 @@ export const LoginForm = ({
                         </Link>
                       </div>
                       <FormControl>
-                        <Input
-                          id="password"
-                          type="password"
-                          required={true}
-                          {...field}
-                        />
+                        <Input id="password" type="password" required={true} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

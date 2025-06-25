@@ -1,17 +1,15 @@
 /// <reference types="vitest/config" />
 import path from 'node:path';
+// https://vite.dev/config/
+import { fileURLToPath } from 'node:url';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
-import { fileURLToPath } from 'node:url';
-import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 const dirname =
-  typeof __dirname !== 'undefined'
-    ? __dirname
-    : path.dirname(fileURLToPath(import.meta.url));
+  typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
 export default defineConfig({
@@ -26,14 +24,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@workspace/ui': path.resolve(__dirname, '../../packages/ui/src'),
-      '@workspace/shared': path.resolve(__dirname, '../../packages/shared/src'),
+      '@vite-react-ts/ui': path.resolve(__dirname, '../../packages/ui/src'),
+      '@utils': path.resolve(__dirname, '../../packages/utils/src'),
     },
   },
   build: {
-    manifest: true,
     target: 'es2022',
     minify: 'esbuild',
+    sourcemap: true,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
+    exclude: ['@utils'], // Exclude workspace packages
   },
   test: {
     coverage: {

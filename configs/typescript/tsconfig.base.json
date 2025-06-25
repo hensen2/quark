@@ -24,7 +24,7 @@
     "incremental": true, // Faster subsequent builds
     "tsBuildInfoFile": ".tsbuildinfo", // Store build info
 
-    // Path Mapping (adjust to your workspace structure)
+    // Path Mapping
     "baseUrl": ".",
     "paths": {
       "@workspace/*": ["../../packages/*/src"],

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../configs/typescript/tsconfig.lib.json",
+  "compilerOptions": {
+    // Language and Environment
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+
+    // Emit Configuration
+    "noEmit": false,
+    "emitDeclarationOnly": true, // Only emit declaration files
+    "outDir": "./dist", // Output directory
+    "rootDir": "./src", // Source directory
+    "tsBuildInfoFile": "./dist/.tsbuildinfo",
+
+    // Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@utils": ["../utils"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx"]
+}

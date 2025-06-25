@@ -4,17 +4,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter @vite-react-ts/spa dev",
+    "dev:spa": "pnpm --filter spa dev",
     "dev:all": "pnpm --parallel --filter \"./apps/*\" dev",
     "build": "pnpm -r --filter \"./packages/*\" build && pnpm -r --filter \"./apps/*\" build",
     "build:packages": "pnpm -r --filter \"./packages/*\" build",
     "build:apps": "pnpm -r --filter \"./apps/*\" build",
     "preview": "pnpm --filter @vite-react-ts/spa preview",
 
-    "format": "biome format --write .",
-    "lint": "biome lint --write .",
+    "format": "biome format --verbose --write .",
+    "lint": "biome lint --verbose --write .",
     "check": "biome check --verbose .",
-    "check:fix": "biome check --write --verbose .",
+    "check:fix": "biome check --verbose --write .",
 
     "test": "pnpm -r test",
     "test:unit": "pnpm --filter @vite-react-ts/spa test:unit",
@@ -27,7 +27,11 @@
     "storybook": "pnpm --filter @vite-react-ts/ui storybook",
     "build-storybook": "pnpm --filter @vite-react-ts/ui build-storybook",
 
-    "clean": "pnpm -r clean && rm -rf node_modules"
+    "clean:all": "pnpm clean:build && pnpm clean:cache && pnpm clean:deps",
+    "clean:build": "pnpm -r exec rm -rf dist/ build/ .tsbuildinfo",
+    "clean:cache": "pnpm -r exec rm -rf .cache node_modules/.cache/",
+    "clean:deps": "pnpm -r exec rm -rf node_modules/ && rm -rf node_modules/",
+    "clean:install": "pnpm clean:all && pnpm install"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",

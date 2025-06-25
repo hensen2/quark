@@ -1,10 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { Button } from '../ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from '../ui/navigation-menu';
+import { Button, NavigationMenu, NavigationMenuItem, NavigationMenuList } from '@vite-react-ts/ui';
 
 export default function MainNav() {
   return (

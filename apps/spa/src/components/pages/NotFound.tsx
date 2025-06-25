@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
 import { Link } from '@tanstack/react-router';
+import { Button } from '@vite-react-ts/ui';
 import type { JSX } from 'react';
 
 export const NotFound = (): JSX.Element => {

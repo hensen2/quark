@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { useTheme } from '@/context/ThemeContext';
+import { Button } from '@vite-react-ts/ui';
 import { Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/context/ThemeContext';
 
 export const ThemeToggle = () => {
   const { setTheme } = useTheme();

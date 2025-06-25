@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
+import { createFileRoute, Outlet, useRouter } from '@tanstack/react-router';
+import { Button } from '@vite-react-ts/ui';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useAuth } from '@/context/AuthContext';
-import { Outlet, createFileRoute, useRouter } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_protected')({
   component: ProtectedRoutes,

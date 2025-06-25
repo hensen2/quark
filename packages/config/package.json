@@ -1,0 +1,28 @@
+{
+  "name": "@vite-react-ts/config",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./index.ts",
+  "files": [
+    "typescript/**/*",
+    "biome/**/*",
+    "vite/**/*",
+    "vitest/**/*",
+    "storybook/**/*",
+    "index.ts"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@storybook/addon-themes": "catalog:",
+    "@storybook/addon-vitest": "catalog:",
+    "@storybook/react-vite": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@tanstack/router-plugin": "catalog:",
+    "@vitejs/plugin-react-swc": "catalog:",
+    "storybook": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "packageManager": "pnpm@10.11.1"
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -8,17 +8,15 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["test-extend.ts", "mockServiceWorker.js", "routeTree.gen.ts"]
+    "includes": ["**", "!**/test-extend.ts", "!**/mockServiceWorker.js", "!**/routeTree.gen.ts"]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 80
+    "lineWidth": 100
   },
   "javascript": {
     "formatter": {
@@ -34,13 +32,16 @@
       "describe",
       "expect",
       "expectTypeOf",
+      "globalThis",
       "it",
       "onTestFailed",
       "onTestFinished",
+      "process",
       "suite",
       "test",
       "vi",
-      "vitest"
+      "vitest",
+      "window"
     ]
   },
   "json": {
@@ -67,47 +68,24 @@
         "noUselessUndefinedInitialization": "error",
         "noVoid": "warn",
         "useDateNow": "error",
-        "useSimplifiedLogicExpression": "error"
+        "useSimplifiedLogicExpression": "error",
+        "noUselessEscapeInRegex": "error"
       },
       "correctness": {
         "noUndeclaredVariables": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "useArrayLiterals": "error",
-        "useHookAtTopLevel": "error"
-      },
-      "nursery": {
-        "noCommonJs": "warn",
-        "noDescendingSpecificity": "error",
-        "noDocumentCookie": "error",
-        "noDuplicateCustomProperties": "error",
-        "noDuplicateElseIf": "error",
-        "noDuplicateProperties": "error",
-        "noIrregularWhitespace": "error",
+        "useHookAtTopLevel": "error",
         "noMissingVarFunction": "error",
-        "noNestedTernary": "error",
-        "noOctalEscape": "error",
-        "noProcessEnv": "warn",
-        "noSecrets": "off",
-        "noStaticElementInteractions": "error",
-        "noSubstr": "error",
-        "noTemplateCurlyInString": "error",
         "noUnknownPseudoClass": "error",
         "noUnknownPseudoElement": "error",
-        "noUnknownTypeSelector": "error",
-        "noUselessEscapeInRegex": "error",
-        "useAdjacentOverloadSignatures": "error",
-        "useAriaPropsSupportedByRole": "error",
-        "useAtIndex": "error",
-        "useCollapsedIf": "error",
-        "useConsistentCurlyBraces": "error",
-        "useConsistentMemberAccessibility": "error",
+        "noUnknownTypeSelector": "error"
+      },
+      "nursery": {
+        "noSecrets": "off",
         "useExplicitType": "off",
-        "useGuardForIn": "error",
-        "useSortedClasses": "off",
-        "useTrimStartEnd": "error",
-        "useValidAutocomplete": "error"
+        "useSortedClasses": "off"
       },
       "style": {
         "noImplicitBoolean": "error",
@@ -126,7 +104,27 @@
         "useSelfClosingElements": "error",
         "useShorthandAssign": "warn",
         "useThrowNewError": "error",
-        "useThrowOnlyError": "error"
+        "useThrowOnlyError": "error",
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
+        "useArrayLiterals": "error",
+        "noCommonJs": "warn",
+        "noDescendingSpecificity": "error",
+        "noNestedTernary": "error",
+        "noProcessEnv": "warn",
+        "noSubstr": "error",
+        "useAtIndex": "error",
+        "useCollapsedIf": "error",
+        "useConsistentCurlyBraces": "error",
+        "useConsistentMemberAccessibility": "error",
+        "useTrimStartEnd": "error"
       },
       "suspicious": {
         "noConsole": "off",
@@ -135,7 +133,21 @@
         "noMisplacedAssertion": "error",
         "useAwait": "error",
         "useErrorMessage": "warn",
-        "useNumberToFixedDigitsArgument": "error"
+        "useNumberToFixedDigitsArgument": "error",
+        "noDocumentCookie": "error",
+        "noDuplicateCustomProperties": "error",
+        "noDuplicateElseIf": "error",
+        "noDuplicateProperties": "error",
+        "noIrregularWhitespace": "error",
+        "noOctalEscape": "error",
+        "noTemplateCurlyInString": "error",
+        "useAdjacentOverloadSignatures": "error",
+        "useGuardForIn": "error"
+      },
+      "a11y": {
+        "noStaticElementInteractions": "error",
+        "useAriaPropsSupportedByRole": "error",
+        "useValidAutocomplete": "error"
       }
     }
   }

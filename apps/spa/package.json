@@ -26,9 +26,10 @@
     "@radix-ui/react-slot": "catalog:",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "catalog:",
+    "@vite-react-ts/ui": "workspace:*",
+    "@vite-react-ts/utils": "workspace:*",
     "axios": "catalog:",
     "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
     "cmdk": "catalog:",
     "lucide-react": "catalog:",
     "next-themes": "catalog:",
@@ -36,7 +37,6 @@
     "react-dom": "catalog:",
     "react-hook-form": "catalog:",
     "sonner": "catalog:",
-    "tailwind-merge": "catalog:",
     "tw-animate-css": "catalog:",
     "vaul": "catalog:",
     "zod": "catalog:"
@@ -71,9 +71,7 @@
     "vitest-browser-react": "catalog:"
   },
   "msw": {
-    "workerDirectory": [
-      "public"
-    ]
+    "workerDirectory": ["public"]
   },
   "packageManager": "pnpm@10.11.1"
 }

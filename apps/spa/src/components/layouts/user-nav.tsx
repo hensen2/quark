@@ -1,6 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { Button } from '../ui/button';
-import { Separator } from '../ui/separator';
+import { Button, Separator } from '@vite-react-ts/ui';
 import { ThemeToggle } from '../ui/theme-toggle';
 import CommandNav from './command-nav';
 

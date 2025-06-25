@@ -14,7 +14,9 @@ dist
 build
 dist-ssr
 *.local
+*.tsbuildinfo
 routeTree.gen.ts
+.tanstack
 .vite/
 .turbo/
 
@@ -43,3 +45,5 @@ Thumbs.db
 # pnpm
 .pnpm-store/
 .pnpm-debug.log*
+
+storybook-static

@@ -1,14 +1,14 @@
-import { Button } from '@/components/ui/button';
+import { cn } from '@utils';
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { cn } from '@/lib/utils';
+  Input,
+  Label,
+} from '@vite-react-ts/ui';
 import type { ComponentPropsWithoutRef, JSX } from 'react';
 
 export const SignupForm = ({
@@ -20,21 +20,14 @@ export const SignupForm = ({
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">Create an account</CardTitle>
-          <CardDescription>
-            Enter your details below to create an account
-          </CardDescription>
+          <CardDescription>Enter your details below to create an account</CardDescription>
         </CardHeader>
         <CardContent>
           <form>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required={true}
-                />
+                <Input id="email" type="email" placeholder="m@example.com" required={true} />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">

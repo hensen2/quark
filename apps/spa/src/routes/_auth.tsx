@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { Link, Outlet, createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, Link, Outlet } from '@tanstack/react-router';
+import { Button } from '@vite-react-ts/ui';
 import { Home } from 'lucide-react';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 export const Route = createFileRoute('/_auth')({
   component: AuthRoutes,

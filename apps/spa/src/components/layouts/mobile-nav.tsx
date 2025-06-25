@@ -1,19 +1,15 @@
 import { Link } from '@tanstack/react-router';
-import { type CSSProperties, useState } from 'react';
-import { Button } from '../ui/button';
 import {
+  Button,
   Drawer,
   DrawerContent,
   DrawerOverlay,
   DrawerPortal,
   DrawerTrigger,
-} from '../ui/drawer';
+} from '@vite-react-ts/ui';
+import { type CSSProperties, useState } from 'react';
 
-export default function MobileNav({
-  links,
-}: {
-  links: Array<{ to: string; label: string }>;
-}) {
+export default function MobileNav({ links }: { links: Array<{ to: string; label: string }> }) {
   const [showNavbar, setShowNavbar] = useState(false);
 
   return (
@@ -32,11 +28,7 @@ export default function MobileNav({
             className="!size-6"
           >
             <title>Menu Icon</title>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 9h16.5m-16.5 6.75h16.5"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
           </svg>
           <span className="sr-only">Toggle Menu</span>
         </Button>

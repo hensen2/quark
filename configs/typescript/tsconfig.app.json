@@ -10,7 +10,12 @@
     "useDefineForClassFields": true, // Required for Vite
     "allowJs": true, // Allow JS files in React projects
     "checkJs": false, // Don't type-check JS files
-    "moduleDetection": "force" // Force module detection for Vite
+    "moduleDetection": "force", // Force module detection for Vite
+
+    // Development experience
+    "composite": true, // Enable project references
+    "sourceMap": true, // Generate source maps
+    "declarationMap": true // Generate declaration maps
   },
   "include": ["src/**/*", "vite.config.ts"]
 }

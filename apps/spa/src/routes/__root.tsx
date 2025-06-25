@@ -1,13 +1,12 @@
-import { Toaster } from '@/components/ui/sonner';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { Toaster } from '@vite-react-ts/ui';
 import { authQueryOptions } from '@/lib/auth';
 import type { RouterContext } from '@/lib/router';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 export const Route = createRootRouteWithContext<RouterContext>()({
-  beforeLoad: ({ context: { queryClient } }) =>
-    queryClient.ensureQueryData(authQueryOptions),
+  beforeLoad: ({ context: { queryClient } }) => queryClient.ensureQueryData(authQueryOptions),
   component: Root,
 });
 

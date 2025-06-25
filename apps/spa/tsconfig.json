@@ -1,13 +1,27 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.test.json" }
-  ],
+  "extends": "../../configs/typescript/tsconfig.app.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@ui": ["../../packages/ui/components"],
+      "@utils": ["../../packages/utils/src"]
     }
-  }
+  },
+  "files": ["vite.config.ts"],
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts*",
+    "**/*.spec.ts*",
+    "**/*.stories.tsx",
+    "src/**/test",
+    "src/**/__tests__"
+  ],
+  "references": [
+    { "path": "../../packages/ui" },
+    { "path": "../../packages/utils" }
+  ]
 }
