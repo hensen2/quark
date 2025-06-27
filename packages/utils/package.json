@@ -1,5 +1,5 @@
 {
-  "name": "@vite-react-ts/utils",
+  "name": "@quark/utils",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -11,7 +11,10 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist/**/*", "README.md"],
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc -b",
     "dev": "tsc -w",

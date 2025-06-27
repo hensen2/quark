@@ -1,5 +1,5 @@
 {
-  "name": "@vite-react-ts/ui",
+  "name": "@quark/ui",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -52,7 +52,7 @@
     "@radix-ui/react-navigation-menu": "catalog:",
     "@radix-ui/react-separator": "catalog:",
     "@radix-ui/react-slot": "catalog:",
-    "@vite-react-ts/utils": "workspace:*",
+    "@quark/utils": "workspace:*",
     "class-variance-authority": "catalog:",
     "cmdk": "catalog:",
     "lucide-react": "catalog:",

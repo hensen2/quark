@@ -1,6 +1,6 @@
-import { server } from '@/test/mocks/server';
 import { AxiosError } from 'axios';
-import { http, HttpResponse } from 'msw';
+import { HttpResponse, http } from 'msw';
+import { server } from '@/test/mocks/server';
 import { api, axiosConfig } from '../api';
 
 describe('apiClient', () => {

@@ -1,5 +1,5 @@
 {
-  "name": "@vite-react-ts/spa",
+  "name": "@quark/spa",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -26,8 +26,8 @@
     "@radix-ui/react-slot": "catalog:",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "catalog:",
-    "@vite-react-ts/ui": "workspace:*",
-    "@vite-react-ts/utils": "workspace:*",
+    "@quark/ui": "workspace:*",
+    "@quark/utils": "workspace:*",
     "axios": "catalog:",
     "class-variance-authority": "catalog:",
     "cmdk": "catalog:",

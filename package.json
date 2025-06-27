@@ -1,6 +1,6 @@
 {
-  "name": "@vite-react-ts/workspace",
-  "version": "1.0.0",
+  "name": "quark",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,23 +9,24 @@
     "build": "pnpm -r --filter \"./packages/*\" build && pnpm -r --filter \"./apps/*\" build",
     "build:packages": "pnpm -r --filter \"./packages/*\" build",
     "build:apps": "pnpm -r --filter \"./apps/*\" build",
-    "preview": "pnpm --filter @vite-react-ts/spa preview",
+    "preview": "pnpm --filter @quark/spa preview",
 
     "format": "biome format --verbose --write .",
     "lint": "biome lint --verbose --write .",
     "check": "biome check --verbose .",
     "check:fix": "biome check --verbose --write .",
 
-    "test": "pnpm -r test",
-    "test:unit": "pnpm --filter @vite-react-ts/spa test:unit",
-    "test:integration": "pnpm --filter @vite-react-ts/spa test:integration",
-    "test:storybook": "pnpm --filter @vite-react-ts/ui test:storybook",
-    "test:ui": "pnpm --filter @vite-react-ts/spa test:ui",
-    "coverage": "pnpm --filter @vite-react-ts/spa coverage",
+    "vitest": "vitest",
+    "test": "pnpm --filter \"./packages/**\" test",
+    "test:unit": "pnpm --filter @quark/spa test:unit",
+    "test:integration": "pnpm --filter @quark/spa test:integration",
+    "test:storybook": "pnpm --filter @quark/ui test:storybook",
+    "test:ui": "pnpm --filter @quark/spa test:ui",
+    "coverage": "pnpm --filter @quark/spa coverage",
 
     "tsc": "pnpm -r tsc",
-    "storybook": "pnpm --filter @vite-react-ts/ui storybook",
-    "build-storybook": "pnpm --filter @vite-react-ts/ui build-storybook",
+    "storybook": "pnpm --filter @quark/ui storybook",
+    "build-storybook": "pnpm --filter @quark/ui build-storybook",
 
     "clean:all": "pnpm clean:build && pnpm clean:cache && pnpm clean:deps",
     "clean:build": "pnpm -r exec rm -rf dist/ build/ .tsbuildinfo",
