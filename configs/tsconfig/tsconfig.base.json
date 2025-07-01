@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // === Language & Environment ===
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleDetection": "force", // Always treat files as modules
+
+    // === Modules ===
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "noUncheckedSideEffectImports": true, // Prevent side effects in imports
+    "resolveJsonModule": true,
+
+    // === Interop Constraints ===
+    "erasableSyntaxOnly": true, // Allow syntax that can be erased by bundler
+    "esModuleInterop": true, // Makes allowSyntheticDefaultImports true by default
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true, // Makes isolatedModules true by default
+
+    // === Emit ===
+    "noEmitOnError": true,
+
+    // Type Check Strictness
+    "strict": true,
+    "exactOptionalPropertyTypes": false, // Enforce exact types for optional properties
+    "noImplicitOverride": true, // Require explicit override keyword
+    "noUncheckedIndexedAccess": true, // Safer array/object access
+
+    // === Completeness ===
+    "skipLibCheck": true,
+
+    // === JavaScript Support ===
+    "allowJs": false
+  }
+}

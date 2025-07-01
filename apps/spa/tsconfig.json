@@ -1,5 +1,5 @@
 {
-  "extends": "../../configs/typescript/tsconfig.app.json",
+  "extends": "../../configs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./.tsbuildinfo",
     "baseUrl": ".",
@@ -20,5 +20,4 @@
     "src/**/test",
     "src/**/__tests__"
   ],
-  "references": [{ "path": "../../packages/ui" }, { "path": "../../packages/utils" }]
 }

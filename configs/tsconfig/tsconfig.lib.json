@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // === Language & Environment ===
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // === Emit ===
+    "noEmit": false,
+    "declaration": true, // Generate .d.ts files
+    "declarationMap": true, // Generate declaration maps
+    "emitDeclarationOnly": true,
+    "composite": true // Enable project references
+  }
+}

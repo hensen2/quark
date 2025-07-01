@@ -1,13 +1,2 @@
-export * from './button';
-export * from './card';
-export * from './command';
-export * from './drawer';
-export * from './dropdown-menu';
-export * from './form';
-export * from './input';
-export * from './label';
-export * from './navigation-menu';
-export * from './separator';
-export * from './sonner';
-export * from './spinner';
-export * from './touch-target';
+// Re-export all component categories
+export * from './primitives';

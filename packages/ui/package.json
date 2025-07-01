@@ -1,44 +1,45 @@
 {
   "name": "@quark/ui",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "description": "Quark React component library.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
-    "./styles": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
-    }
+    "./styles": "./dist/styles.css"
   },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "files": ["dist", "README.md", "CHANGELOG.md"],
   "scripts": {
-    "typecheck": "tsc -b",
-    "dev": "tsc -b --watch",
-    "build": "tsc -b --verbose",
+    "build": "pnpm run build:types && vite build",
+    "dev": "vite build --watch",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
+    "test:browser": "vitest --browser",
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome lint src/",
+    "lint:fix": "biome lint --write src/",
+    "format": "biome format src/",
+    "format:fix": "biome format --write src/",
+    "check": "biome check src/",
+    "check:fix": "biome check --write src/",
+    "type-check": "tsc --noEmit",
+    "type-check:build": "tsc -b --noEmit",
+    "type-check:test": "tsc -b --noEmit",
+    "build:types": "tsc -b",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook:build": "storybook build",
+    "storybook:test": "test-storybook",
+    "clean": "rm -rf dist coverage storybook-static",
+    "prepublishOnly": "pnpm run clean && pnpm run build",
+    "typecheck": "tsc -b",
     "test:storybook": "vitest --project=storybook",
-    "ui:add": "pnpm dlx shadcn@latest add",
-    "clean": "rm -rf dist storybook-static"
+    "ui:add": "pnpm dlx shadcn@latest add"
   },
   "peerDependencies": {
     "react": "catalog:",
@@ -52,18 +53,19 @@
     "@radix-ui/react-navigation-menu": "catalog:",
     "@radix-ui/react-separator": "catalog:",
     "@radix-ui/react-slot": "catalog:",
-    "@quark/utils": "workspace:*",
     "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
     "cmdk": "catalog:",
     "lucide-react": "catalog:",
     "next-themes": "catalog:",
     "react-hook-form": "catalog:",
     "sonner": "catalog:",
+    "tailwind-merge": "catalog:",
     "tw-animate-css": "catalog:",
     "vaul": "catalog:"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "catalog:",
+    "@quark/tsconfig": "workspace:*",
     "@storybook/addon-a11y": "catalog:",
     "@storybook/addon-docs": "catalog:",
     "@storybook/addon-themes": "catalog:",
@@ -79,7 +81,6 @@
     "@vitest/browser": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "@vitest/ui": "catalog:",
-    "playwright": "catalog:",
     "postcss": "catalog:",
     "storybook": "catalog:",
     "tailwindcss": "catalog:",

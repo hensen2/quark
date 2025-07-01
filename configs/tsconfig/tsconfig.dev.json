@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // Source maps for debugging
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "declarationMap": true,
+
+    // Watch mode optimizations
+    "assumeChangesOnlyAffectDirectDependencies": true,
+
+    // Include test types in dev
+    "types": ["node", "jest", "vite/client", "@testing-library/jest-dom"]
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*", // Include tests in dev
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.test.tsx",
+    "**/*.spec.tsx",
+    "vite.config.ts",
+    "jest.config.ts",
+    "*.config.ts" // Include all config files
+  ],
+  "watchOptions": {
+    // Optimize file watching
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriority",
+    "synchronousWatchDirectory": true,
+    "excludeDirectories": ["**/node_modules", "dist", "build", ".turbo"]
+  }
+}

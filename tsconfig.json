@@ -1,8 +1,12 @@
 {
   "files": [],
   "references": [
-    { "path": "./packages/ui" },
-    { "path": "./packages/utils" },
-    { "path": "./apps/spa" }
+    { "path": "./packages/ui" }
+    // {
+    //   "path": "./packages/utils"
+    // },
+    // {
+    //   "path": "./apps/spa"
+    // }
   ]
 }

@@ -27,7 +27,6 @@
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@quark/ui": "workspace:*",
-    "@quark/utils": "workspace:*",
     "axios": "catalog:",
     "class-variance-authority": "catalog:",
     "cmdk": "catalog:",

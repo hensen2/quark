@@ -1,12 +1,13 @@
 {
   "name": "quark",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev:spa": "pnpm --filter spa dev",
     "dev:all": "pnpm --parallel --filter \"./apps/*\" dev",
     "build": "pnpm -r --filter \"./packages/*\" build && pnpm -r --filter \"./apps/*\" build",
+    "build:ui": "pnpm --filter @quark/ui build",
     "build:packages": "pnpm -r --filter \"./packages/*\" build",
     "build:apps": "pnpm -r --filter \"./apps/*\" build",
     "preview": "pnpm --filter @quark/spa preview",

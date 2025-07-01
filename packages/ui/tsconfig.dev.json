@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@quark/tsconfig/tsconfig.lib.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+
+    // Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/utils/*": ["./src/utils/*"]
+    },
+
+    "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/dev.tsbuildinfo"
+  },
+  "include": ["src/**/*", "stories/**/*", "playground/**/*", "*.config.*"]
+}

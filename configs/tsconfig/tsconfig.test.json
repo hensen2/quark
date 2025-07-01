@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // === Language & Environment ===
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // === Emit ===
+    "composite": true, // Enable project references; make incremental true by default
+    "noEmit": true, // Let bundlers handle emission
+
+    /* More permissive for tests */
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    /* Test types */
+    "types": ["vitest/globals", "@testing-library/jest-dom", "node"]
+  }
+}

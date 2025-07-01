@@ -1,14 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.mdx',
-    '../stories/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-  ],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@chromatic-com/storybook',
     '@storybook/addon-vitest',
     '@storybook/addon-docs',
     '@storybook/addon-themes',
@@ -21,6 +15,7 @@ const config: StorybookConfig = {
         viteConfigPath: '../vite.config.ts',
       },
     },
+    disableTelemetry: true,
   },
   framework: {
     name: '@storybook/react-vite',

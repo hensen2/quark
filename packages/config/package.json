@@ -4,7 +4,6 @@
   "type": "module",
   "main": "./index.ts",
   "files": [
-    "typescript/**/*",
     "biome/**/*",
     "vite/**/*",
     "vitest/**/*",
@@ -20,7 +19,6 @@
     "@tanstack/router-plugin": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",
     "storybook": "catalog:",
-    "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"
   },

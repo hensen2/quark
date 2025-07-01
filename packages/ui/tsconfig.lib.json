@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@quark/tsconfig/tsconfig.lib.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/lib.tsbuildinfo",
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/utils/*": ["./src/utils/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.*", "src/**/*.spec.*", "src/**/*.stories.*", "dist/**/*"]
+}

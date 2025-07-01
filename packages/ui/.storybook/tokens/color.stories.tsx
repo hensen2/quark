@@ -43,10 +43,7 @@ const meta: Meta<{
                   //     : hslToHex(Number(h), Number(s), Number(l));
                   return (
                     <div key={name} className="flex w-full flex-col pb-2">
-                      <div
-                        className="h-16 w-full"
-                        style={{ backgroundColor: value }}
-                      />
+                      <div className="h-16 w-full" style={{ backgroundColor: value }} />
                       <p className="text-center font-semibold">{name}</p>
                       <p className="text-xs text-center">{value}</p>
 
@@ -92,8 +89,7 @@ export const Functional: Story = {
       .filter((d) => functionalSwatch.includes(d[0] as ColorKey))
       .sort(
         ([a], [b]) =>
-          functionalSwatch.indexOf(a as ColorKey) -
-          functionalSwatch.indexOf(b as ColorKey),
+          functionalSwatch.indexOf(a as ColorKey) - functionalSwatch.indexOf(b as ColorKey),
       )
       .map(([name, colors]) => {
         return {
