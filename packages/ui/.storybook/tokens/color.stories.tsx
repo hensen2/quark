@@ -12,8 +12,8 @@ const meta: Meta<{
   title: 'design/Color',
   argTypes: {},
   render: (args) => (
-    <table className="w-full table-auto text-left text-sm text-foreground rtl:text-right">
-      <thead className="text-xs bg-muted uppercase">
+    <table className="w-full table-auto text-left text-foreground text-sm rtl:text-right">
+      <thead className="bg-muted text-xs uppercase">
         <tr>
           <th scope="col" className="px-6 py-3">
             Name
@@ -45,7 +45,7 @@ const meta: Meta<{
                     <div key={name} className="flex w-full flex-col pb-2">
                       <div className="h-16 w-full" style={{ backgroundColor: value }} />
                       <p className="text-center font-semibold">{name}</p>
-                      <p className="text-xs text-center">{value}</p>
+                      <p className="text-center text-xs">{value}</p>
 
                       {/* <p className="text-xs text-center opacity-70">
                         {variable}

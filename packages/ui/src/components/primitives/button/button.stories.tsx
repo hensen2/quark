@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Loader2, Mail } from 'lucide-react';
 
-import { Button } from '@/components';
+import { Button } from './button';
 
 const meta = {
   title: 'ui/Button',
@@ -31,19 +31,18 @@ const meta = {
 } satisfies Meta<typeof Button>;
 
 export default meta;
-
-type Story = StoryObj<typeof Button>;
+type ButtonStory = StoryObj<typeof Button>;
 
 /**
  * The default form of the button, used for primary actions and commands.
  */
-export const Default: Story = {};
+export const Default: ButtonStory = {};
 
 /**
  * Use the `outline` button to reduce emphasis on secondary actions, such as
  * canceling or dismissing a dialog.
  */
-export const Outline: Story = {
+export const Outline: ButtonStory = {
   args: {
     variant: 'outline',
   },
@@ -53,7 +52,7 @@ export const Outline: Story = {
  * Use the `ghost` button is minimalistic and subtle, for less intrusive
  * actions.
  */
-export const Ghost: Story = {
+export const Ghost: ButtonStory = {
   args: {
     variant: 'ghost',
   },
@@ -63,7 +62,7 @@ export const Ghost: Story = {
  * Use the `secondary` button to call for less emphasized actions, styled to
  * complement the primary button while being less conspicuous.
  */
-export const Secondary: Story = {
+export const Secondary: ButtonStory = {
   args: {
     variant: 'secondary',
   },
@@ -73,7 +72,7 @@ export const Secondary: Story = {
  * Use the `destructive` button to indicate errors, alerts, or the need for
  * immediate attention.
  */
-export const Destructive: Story = {
+export const Destructive: ButtonStory = {
   args: {
     variant: 'destructive',
   },
@@ -83,7 +82,7 @@ export const Destructive: Story = {
  * Use the `link` button to reduce emphasis on tertiary actions, such as
  * hyperlink or navigation, providing a text-only interactive element.
  */
-export const Link: Story = {
+export const Link: ButtonStory = {
   args: {
     variant: 'link',
   },
@@ -93,7 +92,7 @@ export const Link: Story = {
  * Add the `disabled` prop to a button to prevent interactions and add a
  * loading indicator, such as a spinner, to signify an in-progress action.
  */
-export const Loading: Story = {
+export const Loading: ButtonStory = {
   render: (args) => (
     <Button {...args}>
       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -110,7 +109,7 @@ export const Loading: Story = {
  * Add an icon element to a button to enhance visual communication and
  * providing additional context for the action.
  */
-export const WithIcon: Story = {
+export const WithIcon: ButtonStory = {
   render: (args) => (
     <Button {...args}>
       <Mail className="mr-2 h-4 w-4" /> Login with Email Button
@@ -125,7 +124,7 @@ export const WithIcon: Story = {
  * Use the `sm` size for a smaller button, suitable for interfaces needing
  * compact elements without sacrificing usability.
  */
-export const Small: Story = {
+export const Small: ButtonStory = {
   args: {
     size: 'sm',
   },
@@ -135,7 +134,7 @@ export const Small: Story = {
  * Use the `lg` size for a larger button, offering better visibility and
  * easier interaction for users.
  */
-export const Large: Story = {
+export const Large: ButtonStory = {
   args: {
     size: 'lg',
   },
@@ -144,7 +143,7 @@ export const Large: Story = {
 /**
  * Use the "icon" size for a button with only an icon.
  */
-export const Icon: Story = {
+export const Icon: ButtonStory = {
   args: {
     ...Secondary.args,
     size: 'icon',
@@ -155,7 +154,7 @@ export const Icon: Story = {
 /**
  * Add the `disabled` prop to prevent interactions with the button.
  */
-export const Disabled: Story = {
+export const Disabled: ButtonStory = {
   args: {
     disabled: true,
   },
@@ -164,7 +163,7 @@ export const Disabled: Story = {
 /**
  * The default dark mode form of the button, used for primary actions and commands.
  */
-export const Dark: Story = {
+export const Dark: ButtonStory = {
   parameters: {
     themes: {
       themeOverride: 'dark',
@@ -175,7 +174,7 @@ export const Dark: Story = {
 /**
  * The default mobile viewport form of the button, used for primary actions and commands.
  */
-export const Mobile: Story = {
+export const Mobile: ButtonStory = {
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',

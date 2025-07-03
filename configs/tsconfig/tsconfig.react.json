@@ -1,8 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@quark/tsconfig-react",
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "jsx": "react-jsx"
+    "module": "ESNext",
+    "moduleResolution": "bundler", // Bundler resolution for Vite
+    "target": "ES2022"
+    // "types": ["vite/client"]
   }
 }

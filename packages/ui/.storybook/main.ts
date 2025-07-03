@@ -1,25 +1,23 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  framework: '@storybook/react-vite',
+  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-vitest',
+    // '@storybook/addon-vitest',
     '@storybook/addon-docs',
     '@storybook/addon-themes',
     '@storybook/addon-a11y',
   ],
   core: {
-    builder: {
-      name: '@storybook/builder-vite',
-      options: {
-        viteConfigPath: '../vite.config.ts',
-      },
-    },
+    //   builder: {
+    //     name: '@storybook/builder-vite',
+    //     options: {
+    //       viteConfigPath: './vitest.config.ts',
+    //     },
+    //   },
     disableTelemetry: true,
-  },
-  framework: {
-    name: '@storybook/react-vite',
-    options: {},
+    disableWhatsNewNotifications: true,
   },
 };
 

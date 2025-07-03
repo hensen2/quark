@@ -14,7 +14,11 @@
     },
     "./styles": "./dist/styles.css"
   },
-  "files": ["dist", "README.md", "CHANGELOG.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "pnpm run build:types && vite build",
     "dev": "vite build --watch",
@@ -22,12 +26,12 @@
     "test:ui": "vitest --ui",
     "test:browser": "vitest --browser",
     "test:coverage": "vitest run --coverage",
-    "lint": "biome lint src/",
-    "lint:fix": "biome lint --write src/",
-    "format": "biome format src/",
-    "format:fix": "biome format --write src/",
-    "check": "biome check src/",
-    "check:fix": "biome check --write src/",
+    "lint": "biome lint ./ --reporter=summary --verbose",
+    "lint:fix": "biome lint --write ./ --verbose",
+    "format": "biome format ./ --verbose",
+    "format:fix": "biome format --write ./ --verbose",
+    "check": "biome check ./ --verbose",
+    "check:fix": "biome check --write ./ --verbose",
     "type-check": "tsc --noEmit",
     "type-check:build": "tsc -b --noEmit",
     "type-check:test": "tsc -b --noEmit",
@@ -47,6 +51,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "catalog:",
+    "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "catalog:",
     "@radix-ui/react-dropdown-menu": "catalog:",
     "@radix-ui/react-label": "catalog:",
@@ -81,11 +86,15 @@
     "@vitest/browser": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "@vitest/ui": "catalog:",
+    "playwright": "catalog:",
     "postcss": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "storybook": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
     "vitest": "catalog:",
     "vitest-browser-react": "catalog:"
   }

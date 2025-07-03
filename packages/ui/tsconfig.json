@@ -3,13 +3,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
   "files": [],
   "references": [
     { "path": "./tsconfig.lib.json" },
-    { "path": "./tsconfig.dev.json" },
     { "path": "./tsconfig.node.json" },
     { "path": "./tsconfig.test.json" }
   ]

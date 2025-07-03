@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Input } from '@/components';
+import { Input } from './input';
 
 /**
  * Displays a form input field or a component that looks like an input field.
@@ -58,7 +58,7 @@ export const WithHelperText: Story = {
     <div className="grid items-center gap-1.5">
       <label htmlFor="email-2">{args.placeholder}</label>
       <Input {...args} id="email-2" />
-      <p className="text-sm text-foreground/50">Enter your email address.</p>
+      <p className="text-foreground/50 text-sm">Enter your email address.</p>
     </div>
   ),
 };

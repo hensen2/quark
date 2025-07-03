@@ -11,12 +11,10 @@
     "build:packages": "pnpm -r --filter \"./packages/*\" build",
     "build:apps": "pnpm -r --filter \"./apps/*\" build",
     "preview": "pnpm --filter @quark/spa preview",
-
     "format": "biome format --verbose --write .",
     "lint": "biome lint --verbose --write .",
     "check": "biome check --verbose .",
     "check:fix": "biome check --verbose --write .",
-
     "vitest": "vitest",
     "test": "pnpm --filter \"./packages/**\" test",
     "test:unit": "pnpm --filter @quark/spa test:unit",
@@ -24,11 +22,9 @@
     "test:storybook": "pnpm --filter @quark/ui test:storybook",
     "test:ui": "pnpm --filter @quark/spa test:ui",
     "coverage": "pnpm --filter @quark/spa coverage",
-
     "tsc": "pnpm -r tsc",
     "storybook": "pnpm --filter @quark/ui storybook",
     "build-storybook": "pnpm --filter @quark/ui build-storybook",
-
     "clean:all": "pnpm clean:build && pnpm clean:cache && pnpm clean:deps",
     "clean:build": "pnpm -r exec rm -rf dist/ build/ .tsbuildinfo",
     "clean:cache": "pnpm -r exec rm -rf .cache node_modules/.cache/",
@@ -37,10 +33,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
+    "@manypkg/cli": "catalog:",
     "@types/node": "catalog:",
+    "syncpack": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"
   },
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
 }

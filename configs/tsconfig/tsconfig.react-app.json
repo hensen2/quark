@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@quark/tsconfig-react-app",
+  "extends": "./tsconfig.react.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": false,
+    "incremental": true
+  }
+}

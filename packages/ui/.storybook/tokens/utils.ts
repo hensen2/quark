@@ -1,3 +1,4 @@
+// @ts-nocheck
 export const hslToHex = (h: number, s: number, l: number) => {
   const left = l / 100;
   const a = (s * Math.min(left, 1 - left)) / 100;

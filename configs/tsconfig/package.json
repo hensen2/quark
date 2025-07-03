@@ -3,8 +3,5 @@
   "version": "0.1.0",
   "private": true,
   "description": "TypeScript configurations for Quark monorepo.",
-  "peerDependencies": {
-    "typescript": "catalog:"
-  },
-  "packageManager": "pnpm@10.11.1"
+  "packageManager": "pnpm@10.12.4"
 }

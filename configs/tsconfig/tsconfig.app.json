@@ -2,13 +2,10 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    // === Language & Environment ===
     "jsx": "react-jsx",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
 
-    // === Emit ===
     "composite": true, // Enable project references; make incremental true by default
-    "noEmit": true, // Let bundlers handle emission
-    "sourceMap": true
+    "noEmit": true // Let bundlers handle emission
   }
 }

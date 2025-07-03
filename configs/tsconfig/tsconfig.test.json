@@ -4,18 +4,16 @@
   "compilerOptions": {
     // === Language & Environment ===
     "jsx": "react-jsx",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-
-    // === Emit ===
-    "composite": true, // Enable project references; make incremental true by default
-    "noEmit": true, // Let bundlers handle emission
-
-    /* More permissive for tests */
-    "allowJs": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-
-    /* Test types */
-    "types": ["vitest/globals", "@testing-library/jest-dom", "node"]
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "types": [
+      "node",
+      "storybook",
+      "vitest/globals",
+      "vitest-browser-react",
+      "@vitest/browser/providers/playwright"
+    ]
   }
 }

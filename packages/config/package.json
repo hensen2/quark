@@ -11,7 +11,6 @@
     "index.ts"
   ],
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
     "@storybook/addon-themes": "catalog:",
     "@storybook/addon-vitest": "catalog:",
     "@storybook/react-vite": "catalog:",

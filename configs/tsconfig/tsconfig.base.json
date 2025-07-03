@@ -1,37 +1,33 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@quark/tsconfig",
   "compilerOptions": {
-    // === Language & Environment ===
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleDetection": "force", // Always treat files as modules
-
-    // === Modules ===
-    "moduleResolution": "bundler",
+    //! Some options are set to true/false by default, but are explicitly defined here for clarity and to prevent unintended behavior.
+    /* === Base Compiler Options === */
     "allowImportingTsExtensions": true,
-    "jsx": "react-jsx",
-    "noUncheckedSideEffectImports": true, // Prevent side effects in imports
-    "resolveJsonModule": true,
-
-    // === Interop Constraints ===
-    "erasableSyntaxOnly": true, // Allow syntax that can be erased by bundler
-    "esModuleInterop": true, // Makes allowSyntheticDefaultImports true by default
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true, // ^^Declared in case esModuleInterop is false
+    "composite": false,
+    "erasableSyntaxOnly": true,
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
-    "verbatimModuleSyntax": true, // Makes isolatedModules true by default
-
-    // === Emit ===
+    "isolatedModules": true, // ^^Declared in case verbatimModuleSyntax is false
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "noEmit": true, // Must opt in to emit files instead of bundler
     "noEmitOnError": true,
-
-    // Type Check Strictness
-    "strict": true,
-    "exactOptionalPropertyTypes": false, // Enforce exact types for optional properties
-    "noImplicitOverride": true, // Require explicit override keyword
-    "noUncheckedIndexedAccess": true, // Safer array/object access
-
-    // === Completeness ===
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-
-    // === JavaScript Support ===
-    "allowJs": false
-  }
+    "strict": true,
+    "target": "ES2022", // Good target for most modern browsers and Node.js versions
+    "useDefineForClassFields": true, // ^^Declared in case target is lower than E2022
+    "verbatimModuleSyntax": true
+  },
+  "files": ["index.ts"]
 }

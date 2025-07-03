@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "catalog:",
+    "@quark/ui": "workspace:*",
     "@radix-ui/react-dialog": "catalog:",
     "@radix-ui/react-dropdown-menu": "catalog:",
     "@radix-ui/react-label": "catalog:",
@@ -26,7 +27,6 @@
     "@radix-ui/react-slot": "catalog:",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "catalog:",
-    "@quark/ui": "workspace:*",
     "axios": "catalog:",
     "class-variance-authority": "catalog:",
     "cmdk": "catalog:",

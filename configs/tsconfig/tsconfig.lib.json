@@ -1,15 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@quark/tsconfig-lib",
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    // === Language & Environment ===
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-
-    // === Emit ===
-    "noEmit": false,
+    "composite": true, // Enable project references
     "declaration": true, // Generate .d.ts files
     "declarationMap": true, // Generate declaration maps
-    "emitDeclarationOnly": true,
-    "composite": true // Enable project references
+    "incremental": true,
+    "noEmit": false
   }
 }

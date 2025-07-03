@@ -2,25 +2,15 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@quark/tsconfig/tsconfig.test.json",
   "compilerOptions": {
-    // Test environment specific
-    "types": ["vitest/globals", "vitest-browser-react", "node"],
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "jsx": "react-jsx",
-
-    // Disable emit for tests (handled by Vitest)
-    "noEmit": true,
-    "composite": true, // Enable project references
-
     "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/test.tsbuildinfo"
-
-    // Enable globals for Vitest
-    // "allowUmdGlobalAccess": true
   },
   "include": [
     "src/**/*.test.*",
-    "src/**/*.spec.*",
-    "tests/**/*",
-    "src/test-utils/**/*",
+    "src/**/*.stories.*",
+    "src/**/__tests__/**/*",
+    "src/styles/globals.css.d.ts",
+    "tests",
+    ".storybook/**/*",
     "vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "coverage", "storybook-static"]

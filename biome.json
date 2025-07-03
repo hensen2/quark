@@ -9,9 +9,11 @@
   "files": {
     "ignoreUnknown": false,
     "includes": [
-      "*",
       "packages/ui/**",
       "configs/tsconfig/**",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/dist/**",
       "!**/test-extend.ts",
       "!**/mockServiceWorker.js",
       "!**/routeTree.gen.ts"
@@ -51,7 +53,14 @@
         "noSecrets": "on",
         "useExplicitType": "off",
         "useObjectSpread": "on",
-        "useSortedClasses": "on"
+        "useSortedClasses": {
+          "fix": "unsafe",
+          "level": "warn",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["cn", "clsx", "cva", "tw", "tw.*"]
+          }
+        }
       },
       "performance": {
         "recommended": true,
@@ -100,7 +109,13 @@
       },
       "suspicious": {
         "recommended": true,
-        "noConsole": "on",
+        "noConsole": {
+          "fix": "none",
+          "level": "warn",
+          "options": {
+            "allow": ["warn", "error", "info"]
+          }
+        },
         "noEmptyBlockStatements": "on",
         "noMisplacedAssertion": "on",
         "noVar": "on",
@@ -109,6 +124,9 @@
         "useGuardForIn": "on",
         "useNumberToFixedDigitsArgument": "on"
       }
+    },
+    "domains": {
+      "test": "all"
     }
   },
   "javascript": {
