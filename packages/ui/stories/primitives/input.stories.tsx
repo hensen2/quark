@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Input } from './input';
+import { Input } from '@/components/primitives/input';
 
 /**
  * Displays a form input field or a component that looks like an input field.

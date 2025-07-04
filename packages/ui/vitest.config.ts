@@ -1,4 +1,3 @@
-/// <reference types="vite/client" />
 import path from 'node:path';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { defineConfig, mergeConfig } from 'vitest/config';

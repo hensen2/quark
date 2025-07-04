@@ -2,16 +2,23 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@quark/tsconfig/tsconfig.test.json",
   "compilerOptions": {
+    // Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/utils/*": ["src/utils/*"]
+    },
     "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/test.tsbuildinfo"
   },
   "include": [
-    "src/**/*.test.*",
-    "src/**/*.stories.*",
-    "src/**/__tests__/**/*",
-    "src/styles/globals.css.d.ts",
     "tests",
-    ".storybook/**/*",
-    "vite.config.ts"
+    "stories",
+    ".storybook",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "src/styles/globals.css.d.ts"
   ],
   "exclude": ["node_modules", "dist", "coverage", "storybook-static"]
 }

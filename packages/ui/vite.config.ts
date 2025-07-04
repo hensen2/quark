@@ -9,32 +9,34 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), dts()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@/utils': path.resolve(__dirname, './src/utils'),
+      '@': path.resolve(__dirname, 'src'),
+      '@/components': path.resolve(__dirname, 'src/components'),
+      '@/hooks': path.resolve(__dirname, 'src/hooks'),
+      '@/utils': path.resolve(__dirname, 'src/utils'),
     },
   },
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, './src/components/primitives/button/button.tsx'),
-      name: 'react-ui',
-      formats: ['es', 'cjs'],
-    },
-    rollupOptions: {
-      // Externalize deps that shouldn't be bundled into library
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'react/jsx-runtime': 'jsxRuntime',
-          tailwindcss: 'tailwindcss',
-        },
-      },
-    },
-    target: 'es2022',
-    minify: false,
-    sourcemap: true,
-  },
+  // build: {
+  //   lib: {
+  //     entry: path.resolve(__dirname, './src/components/primitives/button.tsx'),
+  //     name: 'react-ui',
+  //     formats: ['es', 'cjs'],
+  //   },
+  //   rollupOptions: {
+  //     // Externalize deps that shouldn't be bundled into library
+  //     external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
+  //     output: {
+  //       globals: {
+  //         react: 'React',
+  //         'react-dom': 'React-dom',
+  //         'react/jsx-runtime': 'react/jsx-runtime',
+  //         tailwindcss: 'tailwindcss',
+  //       },
+  //     },
+  //   },
+  //   target: 'es2022',
+  //   minify: false,
+  //   sourcemap: true,
+  // },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react/jsx-runtime'],
   },
