@@ -2,8 +2,17 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@quark/tsconfig/tsconfig.node22.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/node.tsbuildinfo"
+    "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/node.tsbuildinfo",
     // If not working, try setting module and moduleResolution back to "ESNext"
+
+    // Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/utils/*": ["src/utils/*"]
+    }
   },
   "include": ["vite.config.ts"]
 }

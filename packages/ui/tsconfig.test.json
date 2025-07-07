@@ -12,13 +12,6 @@
     },
     "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/test.tsbuildinfo"
   },
-  "include": [
-    "tests",
-    "stories",
-    ".storybook",
-    "vite.config.ts",
-    "vitest.config.ts",
-    "src/styles/globals.css.d.ts"
-  ],
+  "include": ["tests", "stories", ".storybook", "vite.config.ts", "src/styles/globals.css.d.ts"],
   "exclude": ["node_modules", "dist", "coverage", "storybook-static"]
 }

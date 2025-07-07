@@ -4,7 +4,7 @@ const config: StorybookConfig = {
   framework: '@storybook/react-vite',
   stories: ['../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    // '@storybook/addon-vitest',
+    '@storybook/addon-vitest',
     '@storybook/addon-docs',
     '@storybook/addon-themes',
     '@storybook/addon-a11y',
@@ -16,8 +16,8 @@ const config: StorybookConfig = {
     //       viteConfigPath: './vitest.config.ts',
     //     },
     //   },
-    disableTelemetry: true,
     disableWhatsNewNotifications: true,
+    disableTelemetry: true,
   },
 };
 
