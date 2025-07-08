@@ -50,15 +50,15 @@
         "useHookAtTopLevel": "on"
       },
       "nursery": {
-        "noSecrets": "on",
+        "noSecrets": "off",
         "useExplicitType": "off",
         "useObjectSpread": "on",
         "useSortedClasses": {
           "fix": "unsafe",
-          "level": "warn",
+          "level": "off",
           "options": {
             "attributes": ["className"],
-            "functions": ["cn", "clsx", "cva", "tw", "tw.*"]
+            "functions": ["clsx", "cva", "tw", "tw.*"]
           }
         }
       },

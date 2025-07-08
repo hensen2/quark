@@ -7,11 +7,15 @@
     "allowImportingTsExtensions": true,
     "allowJs": false,
     "allowSyntheticDefaultImports": true, // ^^Declared in case esModuleInterop is false
-    "composite": false,
+    "composite": false, // Must opt in to become a referenced project and support incremental builds/type-checks
+    "declaration": false, // Must opt in to output declaration files; will be true when composit is true
+    "declarationMap": false, // Must opt in to ouput declaration source maps
+    "emitDeclarationOnly": false, // Must opt in to output type declarations
     "erasableSyntaxOnly": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
+    "incremental": false, // ^^Declared as false because composite is false; will be true when composite is true
     "isolatedModules": true, // ^^Declared in case verbatimModuleSyntax is false
     "lib": ["ESNext"],
     "module": "ESNext",
@@ -24,10 +28,10 @@
     "noUncheckedSideEffectImports": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "sourceMap": false, // Must opt in to output source maps
     "strict": true,
     "target": "ES2022", // Good target for most modern browsers and Node.js versions
     "useDefineForClassFields": true, // ^^Declared in case target is lower than E2022
     "verbatimModuleSyntax": true
-  },
-  "files": ["index.ts"]
+  }
 }

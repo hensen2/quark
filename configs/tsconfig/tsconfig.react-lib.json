@@ -3,11 +3,11 @@
   "display": "@quark/tsconfig-react-lib",
   "extends": "./tsconfig.react.json",
   "compilerOptions": {
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
+    "composite": true, // Enable project references
+    "declaration": true, // Generate .d.ts files
+    "declarationMap": true, // Generate declaration maps
     "emitDeclarationOnly": true,
-    "incremental": true,
-    "noEmit": false
+    "incremental": true, // Incrementally type-checks builds
+    "noEmit": false // Allow declarations to be emitted
   }
 }

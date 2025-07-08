@@ -1,5 +1,5 @@
 {
-  "extends": "../../configs/tsconfig/tsconfig.app.json",
+  "extends": "@quark/tsconfig/tsconfig.react-app.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./.tsbuildinfo",
     "baseUrl": ".",

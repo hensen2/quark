@@ -1,12 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.base.json",
+  "display": "@quark/tsconfig-react-test",
+  "extends": "./tsconfig.react.json",
   "compilerOptions": {
-    // === Language & Environment ===
-    "jsx": "react-jsx",
+    // "composite": true, // Enable project references
+    "incremental": true, // Incrementally type-checks builds
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
     "target": "ESNext",
     "types": [
       "node",
