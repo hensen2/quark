@@ -1,19 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@quark/tsconfig/tsconfig.react-lib.json",
+  "extends": ["@quark/tsconfig/tsconfig.react-lib.json", "./tsconfig.json"],
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "./dist",
-    "paths": {
-      "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/utils/*": ["src/utils/*"]
-    },
     "rootDir": "./src",
     "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/lib.tsbuildinfo"
   },
-  "files": [],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test.*", "src/**/*.spec.*", "dist/**/*"]
 }

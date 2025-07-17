@@ -1,14 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@quark/tsconfig/tsconfig.react-test.json",
+  "extends": ["@quark/tsconfig/tsconfig.react-test.json", "./tsconfig.json"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/utils/*": ["src/utils/*"]
-    },
     "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo/test.tsbuildinfo"
   },
   "include": [

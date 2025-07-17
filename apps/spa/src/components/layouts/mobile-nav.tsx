@@ -1,12 +1,13 @@
 import { Link } from '@tanstack/react-router';
 import {
-  Button,
   Drawer,
   DrawerContent,
   DrawerOverlay,
   DrawerPortal,
   DrawerTrigger,
-} from '@vite-react-ts/ui';
+} from '../../../../../packages/ui/src/components/primitives/drawer';
+import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+
 import { type CSSProperties, useState } from 'react';
 
 export default function MobileNav({ links }: { links: Array<{ to: string; label: string }> }) {

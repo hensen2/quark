@@ -23,19 +23,18 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, './src/components/primitives/button.tsx'),
+      entry: path.resolve(__dirname, 'src/components/primitives/button.tsx'),
       name: 'react-ui',
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
       // Externalize deps that shouldn't be bundled into library
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'React-dom',
           'react/jsx-runtime': 'react/jsx-runtime',
-          tailwindcss: 'tailwindcss',
         },
       },
     },
@@ -67,6 +66,7 @@ export default defineConfig({
             headless: true,
             instances: [{ browser: 'chromium' }],
           },
+          globals: true,
           setupFiles: ['./.storybook/vitest.storybook.setup.ts'],
         },
       },

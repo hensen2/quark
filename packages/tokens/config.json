@@ -1,5 +1,5 @@
 {
-  "source": ["src/colors.json"],
+  "source": ["src/core/colors.json"],
   "platforms": {
     "css": {
       "transformGroup": "css",

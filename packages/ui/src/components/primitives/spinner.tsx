@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import { cn } from '@/utils/cn';
+import { cn } from '../../utils/cn';
 
 const sizes = {
   sm: 'size-4',

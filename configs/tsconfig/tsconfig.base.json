@@ -13,7 +13,7 @@
     "emitDeclarationOnly": false, // Must opt in to output type declarations
     "erasableSyntaxOnly": true,
     "esModuleInterop": true,
-    "exactOptionalPropertyTypes": false,
+    "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": false, // ^^Declared as false because composite is false; will be true when composite is true
     "isolatedModules": true, // ^^Declared in case verbatimModuleSyntax is false

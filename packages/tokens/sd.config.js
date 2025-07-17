@@ -10,8 +10,20 @@ StyleDictionary.registerFilter({
   filter: (token) => token.path.includes('light'),
 });
 
+StyleDictionary.registerFormat({
+  name: 'custom',
+  format: ({ dictionary }) => {
+    const names = [];
+    dictionary.allTokens.map((token) => {
+      names.push(`  --color-${token.name.split('-', 2).join('-')}: ${token.value};`);
+    });
+
+    return `:root {\n${names.join('\n')}\n}\n`;
+  },
+});
+
 export default {
-  source: ['src/colors/spectrum2/colors.json'],
+  source: ['src/core/colors.json'],
   platforms: {
     css: {
       transformGroup: 'css',
@@ -29,6 +41,11 @@ export default {
           options: {
             selector: '.dark',
           },
+        },
+        {
+          destination: 'vars.css',
+          format: 'custom',
+          filter: 'isLight',
         },
       ],
     },

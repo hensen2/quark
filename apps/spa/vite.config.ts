@@ -19,13 +19,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@vite-react-ts/ui': path.resolve(__dirname, '../../packages/ui/src'),
+      '@quark/ui': path.resolve(__dirname, '../../packages/ui/src/components'),
       '@utils': path.resolve(__dirname, '../../packages/utils/src'),
     },
   },
   build: {
     target: 'es2022',
-    minify: 'esbuild',
+    minify: false,
     sourcemap: true,
   },
   optimizeDeps: {

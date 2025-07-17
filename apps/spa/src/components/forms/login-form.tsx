@@ -2,20 +2,22 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useRouter } from '@tanstack/react-router';
 import { cn } from '@utils';
 import {
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-  Input,
-} from '@vite-react-ts/ui';
+} from '../../../../../packages/ui/src/components/primitives/form';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../../../../packages/ui/src/components/primitives/card';
+import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+import { Input } from '../../../../../packages/ui/src/components/primitives/input';
 import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';

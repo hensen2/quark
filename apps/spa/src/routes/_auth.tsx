@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet } from '@tanstack/react-router';
-import { Button } from '@vite-react-ts/ui';
+import { Button } from '../../../../packages/ui/src/components/primitives/button';
 import { Home } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 

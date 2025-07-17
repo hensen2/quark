@@ -86,6 +86,7 @@
     "react-resizable-panels": "catalog:",
     "sonner": "catalog:",
     "tailwind-merge": "catalog:",
+    "tailwind-variants": "catalog:",
     "tw-animate-css": "catalog:",
     "vaul": "catalog:",
     "zod": "catalog:"
@@ -113,6 +114,7 @@
     "react-dom": "catalog:",
     "storybook": "catalog:",
     "tailwindcss": "catalog:",
+    "tsdown": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:",

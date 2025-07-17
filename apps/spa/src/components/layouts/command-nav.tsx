@@ -2,14 +2,14 @@ import type { DialogProps } from '@radix-ui/react-dialog';
 import { linkOptions, useRouter } from '@tanstack/react-router';
 import { cn } from '@utils';
 import {
-  Button,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
-} from '@vite-react-ts/ui';
+} from '../../../../../packages/ui/src/components/primitives/command';
+import { Button } from '../../../../../packages/ui/src/components/primitives/button';
 import { File } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 

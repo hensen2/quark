@@ -1,6 +1,6 @@
 import { type QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createRouter } from '@tanstack/react-router';
-import { Spinner } from '@vite-react-ts/ui';
+import { Spinner } from '../../../../packages/ui/src/components/primitives/spinner';
 import { NotFound } from '@/components/pages/NotFound';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { routeTree } from '@/routeTree.gen';

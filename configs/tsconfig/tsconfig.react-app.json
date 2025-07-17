@@ -3,7 +3,7 @@
   "display": "@quark/tsconfig-react-app",
   "extends": "./tsconfig.react.json",
   "compilerOptions": {
-    "composite": true, // Enable project references
+    "composite": false, // Enable project references
     "incremental": true // Incrementally type-checks builds
   }
 }

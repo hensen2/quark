@@ -1,14 +1,14 @@
 import { cn } from '@utils';
 import {
-  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-  Input,
-  Label,
-} from '@vite-react-ts/ui';
+} from '../../../../../packages/ui/src/components/primitives/card';
+import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+import { Input } from '../../../../../packages/ui/src/components/primitives/input';
+import { Label } from '../../../../../packages/ui/src/components/primitives/label';
 import type { ComponentPropsWithoutRef, JSX } from 'react';
 
 export const SignupForm = ({
