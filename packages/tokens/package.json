@@ -1,0 +1,17 @@
+{
+  "name": "@quark/tokens",
+  "version": "0.1.0",
+  "description": "Quark design tokens library.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "style-dictionary build -c './sd.config.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.4",
+  "devDependencies": {
+    "style-dictionary": "catalog:"
+  }
+}
