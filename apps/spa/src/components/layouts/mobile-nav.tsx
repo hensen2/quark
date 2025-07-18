@@ -5,8 +5,8 @@ import {
   DrawerOverlay,
   DrawerPortal,
   DrawerTrigger,
-} from '../../../../../packages/ui/src/components/primitives/drawer';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+} from 'quark/components/primitives/drawer';
+import { Button } from 'quark/components/primitives/button';
 
 import { type CSSProperties, useState } from 'react';
 

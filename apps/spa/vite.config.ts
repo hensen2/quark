@@ -18,9 +18,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@quark/ui': path.resolve(__dirname, '../../packages/ui/src/components'),
-      '@utils': path.resolve(__dirname, '../../packages/utils/src'),
+      '@': path.resolve(__dirname, 'src'),
+      'quark': path.resolve(__dirname, '../../packages/ui/src'),
     },
   },
   build: {

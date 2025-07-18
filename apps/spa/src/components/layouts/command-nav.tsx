@@ -1,6 +1,6 @@
 import type { DialogProps } from '@radix-ui/react-dialog';
 import { linkOptions, useRouter } from '@tanstack/react-router';
-import { cn } from '@utils';
+import { cn } from 'quark/utils/cn';
 import {
   CommandDialog,
   CommandEmpty,
@@ -8,8 +8,8 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '../../../../../packages/ui/src/components/primitives/command';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+} from 'quark/components/primitives/command';
+import { Button } from 'quark/components/primitives/button';
 import { File } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 

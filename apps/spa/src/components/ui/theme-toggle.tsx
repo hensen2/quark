@@ -1,4 +1,4 @@
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+import { Button } from 'quark/components/primitives/button';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 

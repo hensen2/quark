@@ -1,14 +1,14 @@
-import { cn } from '@utils';
+import { cn } from 'quark/utils/cn';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '../../../../../packages/ui/src/components/primitives/card';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
-import { Input } from '../../../../../packages/ui/src/components/primitives/input';
-import { Label } from '../../../../../packages/ui/src/components/primitives/label';
+} from 'quark/components/primitives/card';
+import { Button } from 'quark/components/primitives/button';
+import { Input } from 'quark/components/primitives/input';
+import { Label } from 'quark/components/primitives/label';
 
 
 import type { ComponentPropsWithoutRef, JSX } from 'react';

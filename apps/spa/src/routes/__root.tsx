@@ -1,7 +1,7 @@
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
-import { Toaster } from '../../../../packages/ui/src/components/primitives/sonner';
+import { Toaster } from 'quark/components/primitives/sonner';
 import { authQueryOptions } from '@/lib/auth';
 import type { RouterContext } from '@/lib/router';
 

@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+import { Button } from 'quark/components/primitives/button';
 import type { JSX } from 'react';
 
 export const NotFound = (): JSX.Element => {

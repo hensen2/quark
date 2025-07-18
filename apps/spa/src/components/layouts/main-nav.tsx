@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
-import {  NavigationMenu, NavigationMenuItem, NavigationMenuList } from '../../../../../packages/ui/src/components/primitives/navigation-menu';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
+import {  NavigationMenu, NavigationMenuItem, NavigationMenuList } from 'quark/components/primitives/navigation-menu';
+import { Button } from 'quark/components/primitives/button';
 
 
 export default function MainNav() {

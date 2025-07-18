@@ -1,5 +1,5 @@
 import { createFileRoute, Outlet, useRouter } from '@tanstack/react-router';
-import { Button } from '../../../../packages/ui/src/components/primitives/button';
+import { Button } from 'quark/components/primitives/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useAuth } from '@/context/AuthContext';
 

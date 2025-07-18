@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useRouter } from '@tanstack/react-router';
-import { cn } from '@utils';
+import { cn } from 'quark/utils/cn';
 import {
   Form,
   FormControl,
@@ -8,16 +8,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../../../../../packages/ui/src/components/primitives/form';
+} from 'quark/components/primitives/form';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '../../../../../packages/ui/src/components/primitives/card';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
-import { Input } from '../../../../../packages/ui/src/components/primitives/input';
+} from 'quark/components/primitives/card';
+import { Button } from 'quark/components/primitives/button';
+import { Input } from 'quark/components/primitives/input';
 import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';

@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
-import { Button } from '../../../../../packages/ui/src/components/primitives/button';
-import { Separator } from '../../../../../packages/ui/src/components/primitives/separator';
+import { Button } from 'quark/components/primitives/button';
+import { Separator } from 'quark/components/primitives/separator';
 import { ThemeToggle } from '../ui/theme-toggle';
 import CommandNav from './command-nav';
 
