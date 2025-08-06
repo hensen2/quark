@@ -1,0 +1,90 @@
+{
+  "color": {
+    "base": {
+      "red": {
+        "value": "#ff0000",
+        "type": "color",
+        "comment": "Base red color",
+        "attributes": {
+          "category": "color",
+          "type": "base"
+        }
+      },
+      "green": {
+        "value": "#00ff00",
+        "type": "color",
+        "attributes": {
+          "category": "color",
+          "type": "base"
+        }
+      },
+      "blue": {
+        "value": "#0000ff",
+        "type": "color",
+        "comment": "Base blue color"
+      }
+    },
+    "neutral": {
+      "50": {
+        "value": "#fafafa",
+        "type": "color"
+      },
+      "100": {
+        "value": "#f5f5f5",
+        "type": "color"
+      },
+      "500": {
+        "value": "#737373",
+        "type": "color",
+        "comment": "Mid-range neutral"
+      },
+      "900": {
+        "value": "#171717",
+        "type": "color"
+      }
+    }
+  },
+  "size": {
+    "font": {
+      "small": {
+        "value": "12px",
+        "type": "dimension",
+        "comment": "Small text size"
+      },
+      "medium": {
+        "value": "16px",
+        "type": "dimension",
+        "comment": "Default text size"
+      },
+      "large": {
+        "value": "20px",
+        "type": "dimension"
+      }
+    },
+    "space": {
+      "tight": {
+        "value": "4px",
+        "type": "dimension"
+      },
+      "normal": {
+        "value": "8px",
+        "type": "dimension"
+      },
+      "loose": {
+        "value": "16px",
+        "type": "dimension"
+      }
+    }
+  },
+  "asset": {
+    "icon": {
+      "chevron": {
+        "value": "icons/chevron.svg",
+        "type": "asset",
+        "attributes": {
+          "category": "icon"
+        }
+      }
+    }
+  }
+}

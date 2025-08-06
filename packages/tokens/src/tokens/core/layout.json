@@ -1,0 +1,52 @@
+{
+  "border": {
+    "width": {
+      "default": {
+        "value": "{border.width.1}",
+        "type": "dimension"
+      },
+      "1": {
+        "value": "1px",
+        "type": "dimension"
+      },
+      "2": {
+        "value": "2px",
+        "type": "dimension"
+      },
+      "3": {
+        "value": "4px",
+        "type": "dimension"
+      }
+    },
+    "radius": {
+      "default": {
+        "value": "{border.radius.3}",
+        "type": "dimension"
+      },
+      "1": {
+        "value": "3px",
+        "type": "dimension"
+      },
+      "2": {
+        "value": "4px",
+        "type": "dimension"
+      },
+      "3": {
+        "value": "6px",
+        "type": "dimension"
+      },
+      "4": {
+        "value": "8px",
+        "type": "dimension"
+      },
+      "5": {
+        "value": "12px",
+        "type": "dimension"
+      },
+      "full": {
+        "value": "9999px",
+        "type": "dimension"
+      }
+    }
+  }
+}

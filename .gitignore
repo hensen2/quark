@@ -12,6 +12,8 @@ lerna-debug.log*
 node_modules
 dist
 build
+experimental
+debug
 dist-ssr
 *.local
 *.tsbuildinfo

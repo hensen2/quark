@@ -1,0 +1,113 @@
+{
+  "typography": {
+    "heading": {
+      "h1": {
+        "$value": {
+          "fontFamily": "Inter",
+          "fontSize": "32px",
+          "fontWeight": 700,
+          "lineHeight": 1.2,
+          "letterSpacing": "-0.02em"
+        },
+        "$type": "typography",
+        "$description": "Main page heading style"
+      },
+      "h2": {
+        "$value": {
+          "fontFamily": "Inter",
+          "fontSize": "24px",
+          "fontWeight": 600,
+          "lineHeight": 1.3,
+          "letterSpacing": "-0.01em"
+        },
+        "$type": "typography",
+        "$description": "Section heading style"
+      }
+    },
+    "body": {
+      "large": {
+        "$value": {
+          "fontFamily": "Inter",
+          "fontSize": "18px",
+          "fontWeight": 400,
+          "lineHeight": 1.6
+        },
+        "$type": "typography"
+      },
+      "medium": {
+        "$value": {
+          "fontFamily": "Inter",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "lineHeight": 1.5
+        },
+        "$type": "typography",
+        "$description": "Default body text"
+      }
+    }
+  },
+  "shadow": {
+    "button": {
+      "default": {
+        "$value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px",
+            "color": "#0000000d"
+          },
+          {
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px",
+            "color": "#0000001a"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Multi-layer shadow for buttons"
+      },
+      "hover": {
+        "$value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "8px",
+            "spread": "0px",
+            "color": "#0000001a"
+          },
+          {
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px",
+            "color": "#00000026"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Enhanced shadow for button hover state"
+      }
+    }
+  },
+  "transition": {
+    "quick": {
+      "$value": {
+        "duration": "150ms",
+        "timingFunction": "ease-out",
+        "delay": "0ms"
+      },
+      "$type": "transition",
+      "$description": "Quick transition for micro-interactions"
+    },
+    "moderate": {
+      "$value": {
+        "duration": "300ms",
+        "timingFunction": "ease-in-out",
+        "delay": "0ms"
+      },
+      "$type": "transition",
+      "$description": "Standard transition timing"
+    }
+  }
+}

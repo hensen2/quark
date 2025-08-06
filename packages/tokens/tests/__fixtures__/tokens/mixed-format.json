@@ -1,0 +1,41 @@
+{
+  "global": {
+    "color": {
+      "primary": {
+        "$value": "#007bff",
+        "type": "color",
+        "comment": "Mixed format - DTCG value with SD type and comment",
+        "attributes": {
+          "category": "global"
+        }
+      },
+      "secondary": {
+        "value": "#6c757d",
+        "$description": "Mixed format - SD value with DTCG description",
+        "$type": "color"
+      }
+    },
+    "spacing": {
+      "base": {
+        "$value": "16px",
+        "$type": "dimension",
+        "attributes": {
+          "multiplier": 1
+        }
+      }
+    }
+  },
+  "component": {
+    "button": {
+      "padding": {
+        "value": "12px 24px",
+        "type": "dimension",
+        "comment": "Standard button padding"
+      },
+      "border-radius": {
+        "$value": "6px",
+        "$description": "Button corner radius"
+      }
+    }
+  }
+}

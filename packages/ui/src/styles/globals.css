@@ -80,7 +80,6 @@
 }
 
 @theme inline {
-  --color-black-a1: var(--color-black-a1);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

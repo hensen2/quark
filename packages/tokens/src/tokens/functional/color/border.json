@@ -1,0 +1,19 @@
+{
+  "border": {
+    "default": {
+      "value": "{color.gray-6}",
+      "type": "color",
+      "description": "Color used for decorative borders and application framing (provides subtle contrast when applied decoratively or in non-essential elements)."
+    },
+    "muted": {
+      "value": "{color.gray-5}",
+      "type": "color",
+      "description": "Color used for decorative borders and application framing (provides subtle contrast when applied decoratively or in non-essential elements)."
+    },
+    "emphasis": {
+      "value": "{color.gray-7}",
+      "type": "color",
+      "description": "Color for field borders (which includes components such as text field and action button)."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "icon": {
+    "default": {
+      "value": "{color.gray-11}",
+      "type": "color"
+    },
+    "muted": {
+      "value": "{color.gray-10}",
+      "type": "color"
+    },
+    "emphasis": {
+      "value": "{color.gray-12}",
+      "type": "color"
+    },
+    "disabled": {
+      "value": "{color.gray-7}",
+      "type": "color"
+    }
+  }
+}

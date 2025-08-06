@@ -1,0 +1,12 @@
+{
+  "color": {
+    "primary": {
+      "value": "#007bff"
+    }
+  },
+  "size": {
+    "small": {
+      "value": "8px"
+    }
+  }
+}

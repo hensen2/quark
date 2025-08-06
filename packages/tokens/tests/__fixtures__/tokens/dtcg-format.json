@@ -1,0 +1,58 @@
+{
+  "color": {
+    "background": {
+      "primary": {
+        "$value": "#ffffff",
+        "$type": "color",
+        "$description": "Primary background color",
+        "$org.quark.themes": {
+          "light": "#ffffff",
+          "dark": "#1a1a1a",
+          "high-contrast": "#ffffff"
+        }
+      },
+      "secondary": {
+        "$value": "#f8f9fa",
+        "$type": "color",
+        "$description": "Secondary background color",
+        "$org.quark.themes": {
+          "light": "#f8f9fa",
+          "dark": "#2d2d2d"
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "#212529",
+        "$type": "color",
+        "$description": "Primary text color",
+        "$org.quark.themes": {
+          "light": "#212529",
+          "dark": "#ffffff",
+          "high-contrast": "#000000"
+        }
+      },
+      "secondary": {
+        "$value": "#6c757d",
+        "$type": "color",
+        "$description": "Secondary text color",
+        "$org.quark.themes": {
+          "light": "#6c757d",
+          "dark": "#adb5bd"
+        }
+      }
+    }
+  },
+  "border": {
+    "color": {
+      "default": {
+        "$value": "#dee2e6",
+        "$type": "color",
+        "$org.quark.themes": {
+          "light": "#dee2e6",
+          "dark": "#495057"
+        }
+      }
+    }
+  }
+}

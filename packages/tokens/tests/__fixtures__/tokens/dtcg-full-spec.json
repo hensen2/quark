@@ -1,0 +1,184 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$version": "1.0",
+  "color": {
+    "brand": {
+      "primary": {
+        "$value": "#ff6b35",
+        "$type": "color",
+        "$description": "Primary brand color used for call-to-action buttons and key UI elements",
+        "$extensions": {
+          "figmaId": "S:abc123def456",
+          "category": "brand",
+          "figmaStyleId": "1:23"
+        }
+      },
+      "secondary": {
+        "$value": "#4a90e2",
+        "$type": "color",
+        "$description": "Secondary brand color for supporting elements",
+        "$deprecated": false,
+        "$extensions": {
+          "oldName": "accent-blue"
+        }
+      },
+      "legacy": {
+        "$value": "#cccccc",
+        "$type": "color",
+        "$description": "Legacy color, please use neutral.500 instead",
+        "$deprecated": true,
+        "$extensions": {
+          "replacedBy": "neutral.500"
+        }
+      }
+    },
+    "semantic": {
+      "success": {
+        "$value": "#10b981",
+        "$type": "color",
+        "$description": "Success state color"
+      },
+      "warning": {
+        "$value": "#f59e0b",
+        "$type": "color",
+        "$description": "Warning state color"
+      },
+      "error": {
+        "$value": "#ef4444",
+        "$type": "color",
+        "$description": "Error state color"
+      }
+    }
+  },
+  "dimension": {
+    "spacing": {
+      "xs": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "Extra small spacing unit"
+      },
+      "sm": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "Small spacing unit"
+      },
+      "md": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$description": "Medium spacing unit - base unit"
+      },
+      "lg": {
+        "$value": "24px",
+        "$type": "dimension",
+        "$description": "Large spacing unit"
+      },
+      "xl": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$description": "Extra large spacing unit"
+      }
+    },
+    "borderRadius": {
+      "none": {
+        "$value": "0px",
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": "4px",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "8px",
+        "$type": "dimension"
+      },
+      "full": {
+        "$value": "9999px",
+        "$type": "dimension",
+        "$description": "Fully rounded corners"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": {
+        "$value": ["Inter", "system-ui", "sans-serif"],
+        "$type": "fontFamily",
+        "$description": "Font family for headings"
+      },
+      "body": {
+        "$value": ["Inter", "system-ui", "sans-serif"],
+        "$type": "fontFamily",
+        "$description": "Font family for body text"
+      },
+      "mono": {
+        "$value": ["Fira Code", "Monaco", "monospace"],
+        "$type": "fontFamily",
+        "$description": "Monospace font for code"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "$value": "12px",
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": "14px",
+        "$type": "dimension"
+      },
+      "base": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$description": "Base font size"
+      },
+      "lg": {
+        "$value": "18px",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "20px",
+        "$type": "dimension"
+      },
+      "2xl": {
+        "$value": "24px",
+        "$type": "dimension"
+      }
+    }
+  },
+  "shadow": {
+    "elevation": {
+      "low": {
+        "$value": {
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0px",
+          "color": "#0000001a"
+        },
+        "$type": "shadow",
+        "$description": "Low elevation shadow for subtle depth"
+      },
+      "medium": {
+        "$value": {
+          "offsetX": "0px",
+          "offsetY": "4px",
+          "blur": "6px",
+          "spread": "-1px",
+          "color": "#0000001a"
+        },
+        "$type": "shadow",
+        "$description": "Medium elevation shadow"
+      },
+      "high": {
+        "$value": {
+          "offsetX": "0px",
+          "offsetY": "10px",
+          "blur": "15px",
+          "spread": "-3px",
+          "color": "#00000026"
+        },
+        "$type": "shadow",
+        "$description": "High elevation shadow for modals and overlays"
+      }
+    }
+  }
+}

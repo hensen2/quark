@@ -1,0 +1,12 @@
+{
+  "color": {
+    "primary": {
+      "$value": "#ff0000",
+      "$type": "color"
+    },
+    "secondary": {
+      "$value": "#00ff00"
+      // Missing comma and closing brace
+    }
+  // Missing closing brace for color
+// Missing closing brace for root

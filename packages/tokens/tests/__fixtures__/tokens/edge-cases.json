@@ -1,0 +1,94 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$version": "1.0",
+  "$metadata": {
+    "name": "Edge Cases Token Set",
+    "description": "Testing various edge cases"
+  },
+  "special-chars": {
+    "kebab-case-token": {
+      "$value": "#ff0000",
+      "$type": "color"
+    },
+    "dot.separated.token": {
+      "$value": "16px",
+      "$type": "dimension"
+    },
+    "number-123": {
+      "$value": "#00ff00",
+      "$type": "color"
+    }
+  },
+  "mixed-quotes": {
+    "double-quoted": {
+      "$value": "#blue",
+      "$description": "Token with double quotes"
+    },
+    "single-quoted": {
+      "$value": "#red",
+      "$description": "Token with single quotes"
+    }
+  },
+  "without-dollar": {
+    "already-converted": {
+      "value": "#purple",
+      "type": "color",
+      "comment": "Already in style-dictionary format"
+    },
+    "partial-conversion": {
+      "$value": "#orange",
+      "comment": "Mixed conversion state"
+    }
+  },
+  "custom-extensions": {
+    "with-custom-props": {
+      "$value": "#custom",
+      "$type": "color",
+      "$customProp": "should-remain",
+      "$anotherCustom": {
+        "nested": "value"
+      },
+      "$extensions": {
+        "figma": "id123"
+      }
+    }
+  },
+  "empty-groups": {
+    "empty-object": {},
+    "nested": {
+      "also-empty": {}
+    }
+  },
+  "numeric-values": {
+    "zero": {
+      "$value": 0,
+      "$type": "number"
+    },
+    "decimal": {
+      "$value": 1.5,
+      "$type": "number"
+    },
+    "negative": {
+      "$value": -10,
+      "$type": "number"
+    }
+  },
+  "boolean-values": {
+    "true-value": {
+      "$value": true,
+      "$type": "boolean"
+    },
+    "false-value": {
+      "$value": false,
+      "$type": "boolean"
+    },
+    "deprecated-true": {
+      "$value": "#old-color",
+      "$deprecated": true
+    },
+    "deprecated-false": {
+      "$value": "#new-color",
+      "$deprecated": false
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "background": {
+    "default": {
+      "value": "{color.gray-2}",
+      "type": "color",
+      "description": "Default background color when not using background layers."
+    },
+    "muted": {
+      "value": "{color.gray-4}",
+      "type": "color"
+    },
+    "disabled": {
+      "value": "{color.gray-5}",
+      "type": "color"
+    },
+    "emphasis": {
+      "value": "{color.gray-11}",
+      "type": "color"
+    },
+    "primary": {
+      "value": "{color.indigo-9}",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "{color.purple-9}",
+      "type": "color"
+    },
+    "accent": {
+      "value": "{color.blue-9}",
+      "type": "color"
+    },
+    "neutral": {
+      "value": "{color.gray-10}",
+      "type": "color"
+    },
+    "danger": {
+      "value": "{color.red-9}",
+      "type": "color"
+    },
+    "warning": {
+      "value": "{color.orange-9}",
+      "type": "color"
+    },
+    "success": {
+      "value": "{color.green-9}",
+      "type": "color"
+    },
+    "info": {
+      "value": "{color.blue-9}",
+      "type": "color"
+    }
+  }
+}

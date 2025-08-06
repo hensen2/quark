@@ -1,0 +1,14 @@
+{
+  "color": {
+    "primary": {
+      "$value": "#007bff",
+      "$type": "color"
+    }
+  },
+  "space": {
+    "sm": {
+      "$value": "8px",
+      "$type": "dimension"
+    }
+  }
+}

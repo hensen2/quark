@@ -1,0 +1,24 @@
+{
+  "base": {
+    "text": {
+      "weight": {
+        "light": {
+          "type": "fontWeight",
+          "value": 300
+        },
+        "normal": {
+          "value": 400,
+          "type": "fontWeight"
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight"
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight"
+        }
+      }
+    }
+  }
+}

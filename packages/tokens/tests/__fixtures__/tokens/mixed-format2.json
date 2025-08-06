@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "$type": "color",
+    "font": {
+      "base": {
+        "$value": "#111111",
+        "comment": "hello",
+        "$type": "color"
+      },
+      "secondary": { "value": "#333333", "description": "world" },
+      "tertiary": {
+        "$value": "#666666",
+        "$description": "world",
+        "$extensions": {
+          "org.quark.themes": {
+            "dark": "#555555"
+          }
+        }
+      },
+      "inverse": {
+        "base": {
+          "$value": "#ffffff",
+          "extensions": {
+            "org.quark.themes": {
+              "dark": "#000000"
+            }
+          }
+        }
+      }
+    }
+  }
+}
