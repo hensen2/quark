@@ -35,7 +35,6 @@ const transformTokens = (
 export const newOverrides: Preprocessor = {
   name: 'theme-overrides',
   preprocessor: (dictionary: PreprocessedTokens, config: PlatformConfig): PreprocessedTokens => {
-    // console.log(config);
     if (!config.options?.overrides?.themed) {
       return dictionary;
     }

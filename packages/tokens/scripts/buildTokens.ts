@@ -2,7 +2,7 @@ import type { Config } from 'style-dictionary/types';
 import { css } from '../src/platforms/css.ts';
 import { docJson } from '../src/platforms/json.ts';
 import { sd } from '../src/styleDictionary.ts';
-import { themes } from '../src/tokens.ts';
+// import { themes } from '../src/tokens.ts';
 import type {
   ConfigGeneratorOptions,
   StyleDictionaryConfigGenerator,
@@ -16,7 +16,7 @@ import type {
  * @param options options object
  * @returns style dictionary config object
  */
-const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
+const _getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   filename,
   source,
   include,
@@ -50,79 +50,96 @@ const getStyleDictionaryConfig: StyleDictionaryConfigGenerator = (
   ),
 });
 
-const buildDesignTokens = async (buildOptions: ConfigGeneratorOptions): Promise<void> => {
-  /** -----------------------------------
-   * Internal Colors
-   * ----------------------------------- */
-  try {
-    for (const { filename, source, include } of themes) {
-      // build functional scales
-      const extendedSD = await sd.extend({
-        source: [...source, ...include], // build the special formats
-        include,
-        parsers: ['json-parser'],
-        platforms: {
-          css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
-            themed: true,
-            themes: ['light', 'dark'],
-          }),
-        },
-      });
-      await extendedSD.buildAllPlatforms();
-    }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build internal css colors for code output:', e);
-  }
-
-  /** -----------------------------------
-   * Colors, shadows & borders
-   * ----------------------------------- */
-  try {
-    for (const { filename, source, include } of themes) {
-      // build functional scales
-      const extendedSD = await sd.extend(
-        getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, {
-          themed: true,
-          themes: ['light', 'dark'],
-          ...buildOptions,
-        }),
-      );
-      await extendedSD.buildAllPlatforms();
-    }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e);
-  }
-
-  /** -----------------------------------
-   * Tailwind CSS Theme
-   * ----------------------------------- */
+const buildDesignTokens = async (_buildOptions: ConfigGeneratorOptions): Promise<void> => {
   try {
     const extendedSD = await sd.extend({
-      source: [
-        'src/tokens/core/spacing.json',
-        'src/tokens/core/layout.json',
-        'src/tokens/functional/color/*.json',
-      ],
-      include: [
-        'src/tokens/core/palette.json',
-        'src/tokens/core/semantic.json',
-        'src/tokens/core/layout.json',
-      ],
+      source: ['scripts/tokens.json'], // build the special formats
       parsers: ['json-parser'],
+      preprocessors: ['theme-overrides'],
+      usesDtcg: false,
       platforms: {
-        css: css('tailwind/theme.css', buildOptions.prefix, buildOptions.buildPath, {
-          themed: false,
-          themes: ['light', 'dark'],
-        }),
+        css: {
+          // transforms: ['attribute/preview'],
+          files: [],
+        },
       },
     });
     await extendedSD.buildAllPlatforms();
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error('🛑 Error trying to build internal css colors for code output:', e);
   }
+  /** -----------------------------------
+   * Internal Colors
+   * ----------------------------------- */
+  // try {
+  //   for (const { filename, source, include } of themes) {
+  //     // build functional scales
+  //     const extendedSD = await sd.extend({
+  //       source: [...source, ...include], // build the special formats
+  //       include,
+  //       parsers: ['json-parser'],
+  //       platforms: {
+  //         css: css(`internalCss/${filename}.css`, buildOptions.prefix, buildOptions.buildPath, {
+  //           themed: true,
+  //           themes: ['light', 'dark'],
+  //         }),
+  //       },
+  //     });
+  //     await extendedSD.buildAllPlatforms();
+  //   }
+  // } catch (e) {
+  //   // eslint-disable-next-line no-console
+  //   console.error('🛑 Error trying to build internal css colors for code output:', e);
+  // }
+
+  /** -----------------------------------
+   * Colors, shadows & borders
+   * ----------------------------------- */
+  // try {
+  //   for (const { filename, source, include } of themes) {
+  //     // build functional scales
+  //     const extendedSD = await sd.extend(
+  //       getStyleDictionaryConfig(`functional/themes/${filename}`, source, include, {
+  //         themed: true,
+  //         themes: ['light', 'dark'],
+  //         ...buildOptions,
+  //       }),
+  //     );
+  //     await extendedSD.buildAllPlatforms();
+  //   }
+  // } catch (e) {
+  //   // eslint-disable-next-line no-console
+  //   console.error('🛑 Error trying to build Colors, shadows & borders for code output:', e);
+  // }
+
+  /** -----------------------------------
+   * Tailwind CSS Theme
+   * ----------------------------------- */
+  //   try {
+  //     const extendedSD = await sd.extend({
+  //       source: [
+  //         'src/tokens/core/spacing.json',
+  //         'src/tokens/core/layout.json',
+  //         'src/tokens/functional/color/*.json',
+  //       ],
+  //       include: [
+  //         'src/tokens/core/palette.json',
+  //         'src/tokens/core/semantic.json',
+  //         'src/tokens/core/layout.json',
+  //       ],
+  //       parsers: ['json-parser'],
+  //       platforms: {
+  //         css: css('tailwind/theme.css', buildOptions.prefix, buildOptions.buildPath, {
+  //           themed: false,
+  //           themes: ['light', 'dark'],
+  //         }),
+  //       },
+  //     });
+  //     await extendedSD.buildAllPlatforms();
+  //   } catch (e) {
+  //     // eslint-disable-next-line no-console
+  //     console.error('🛑 Error trying to build internal css colors for code output:', e);
+  //   }
 };
 
 /** -----------------------------------
